@@ -5,6 +5,7 @@ public class Student {
     private int id;
     private String firstName;
     private String lastName;
+    private int birthDate;
     private String email;
     private String phoneNumber;
     private String skill;
@@ -26,6 +27,12 @@ public class Student {
     }
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    public int getBirthDate() {
+        return birthDate;
+    }
+    public void setBirthDate(int birthDate) {
+        this.birthDate = birthDate;
     }
     public String getEmail() {
         return email;
