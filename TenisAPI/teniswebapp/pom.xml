@@ -6,7 +6,7 @@
     <groupId>com.dare</groupId>
     <artifactId>teniswebapp</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>teniswebapp</name>
 
     <build>
@@ -18,8 +18,8 @@
                 <version>3.7.0</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.10</source>
+                    <target>1.10</target>
                 </configuration>
             </plugin>
         </plugins>
