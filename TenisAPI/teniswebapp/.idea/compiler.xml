@@ -9,8 +9,5 @@
         <module name="teniswebapp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="teniswebapp" target="1.10" />
-    </bytecodeTargetLevel>
   </component>
 </project>

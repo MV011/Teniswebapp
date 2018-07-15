@@ -4,12 +4,11 @@ public class Feedback {
     private int id;
     private String dateTime;
     private int studentID;
+    private int CoachID;
     private short rating;
     private String description;
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
     public String getDateTime() {
         return dateTime;
     }
@@ -22,6 +21,8 @@ public class Feedback {
     public void setStudentID(int studentID) {
         this.studentID = studentID;
     }
+    public int getCoachID() { return CoachID; }
+    public void setCoachID(int coachID) { CoachID = coachID; }
     public short getRating() {
         return rating;
     }

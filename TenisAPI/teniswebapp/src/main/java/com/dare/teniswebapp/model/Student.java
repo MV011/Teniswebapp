@@ -9,7 +9,7 @@ public class Student {
     private int birthDate;
     private String email;
     private String phoneNumber;
-    private String skill;
+    private short skill;
 
     public int getId() {
         return id;
@@ -44,10 +44,10 @@ public class Student {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public String getSkill() {
+    public short getSkill() {
         return skill;
     }
-    public void setSkill(String skill) {
+    public void setSkill(short skill) {
         this.skill = skill;
     }
 }
