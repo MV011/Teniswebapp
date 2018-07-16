@@ -1,12 +1,15 @@
 package com.dare.teniswebapp.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Student {
 
     //TODO anything missing? needs review
     private int id;
     private String firstName;
     private String lastName;
-    private int birthDate;
+    private String birthDate;
     private String email;
     private String phoneNumber;
     private short skill;
@@ -26,10 +29,10 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public int getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
-    public void setBirthDate(int birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
     public String getEmail() {

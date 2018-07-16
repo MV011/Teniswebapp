@@ -8,12 +8,14 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.sql.SQLException;
 
+@Path("students")
 public class StudentResource {
 
     //TODO add requests
 
-    StudentRepository studentRepository = new StudentRepository();
+    private StudentRepository studentRepository = new StudentRepository();
 
     @POST
     @Path("student")
@@ -22,7 +24,12 @@ public class StudentResource {
             MediaType.APPLICATION_XML})
     public Student createStudentParams(Student student) {
 
-        studentRepository.create(student);
+        try {
+            studentRepository.create(student);
+        }
+        catch(SQLException e) {
+
+        }
 
         return student;
     }
