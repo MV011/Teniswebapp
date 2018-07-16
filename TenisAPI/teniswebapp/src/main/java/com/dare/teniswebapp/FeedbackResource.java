@@ -1,4 +1,4 @@
-package com.dare.teniswebapp.repository;
+package com.dare.teniswebapp;
 
 public class FeedbackResource {
 
