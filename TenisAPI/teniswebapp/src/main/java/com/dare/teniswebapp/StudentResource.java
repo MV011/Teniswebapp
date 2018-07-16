@@ -27,8 +27,8 @@ public class StudentResource {
         try {
             studentRepository.create(student);
         }
-        catch(SQLException e) {
-
+        catch(Throwable e) {
+            System.out.println(e);
         }
 
         return student;

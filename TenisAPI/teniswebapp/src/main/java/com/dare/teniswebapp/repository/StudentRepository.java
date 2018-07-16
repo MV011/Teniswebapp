@@ -12,25 +12,26 @@ public class StudentRepository {
 
     //TODO add methods
 
-    public void create(Student student) throws SQLException {
+    public void create(Student student) throws Throwable {
 
         Connection connection = null;
         Statement statement = null;
 
-//        connection = DBConn.start();
-//
-//        statement = connection.createStatement();
-//
-//        System.out.println("INSERT INTO `tenisdb`.`Student` (`StudentFirstName`, `StudentLastName`, `StudentBirthDate`, `StudentEmail`, `StudentPhoneNumber`, `StudentSkill`) " +
-//                " ('"+student.getFirstName()+"', '"+student.getLastName()+"', '"+student.getBirthDate()+"', '"+student.getEmail()+"', '"+student.getPhoneNumber()+"', '"+student.getSkill()+"');");
-//
-//        statement.executeQuery("INSERT INTO `Student` (`StudentFirstName`, `StudentLastName`, `StudentBirthDate`, `StudentEmail`, `StudentPhoneNumber`, `StudentSkill`) " +
-//                    " ('"+student.getFirstName()+"', '"+student.getLastName()+"', '"+student.getBirthDate()+"', '"+student.getEmail()+"', '"+student.getPhoneNumber()+"', '"+student.getSkill()+"');");
-//
-//        statement.close();
-//        connection.close();
+        try {
+            connection = DBConn.start();
 
-        System.out.println("SHow me stuff");
+            statement = connection.createStatement();
+
+            statement.executeUpdate("INSERT INTO `Student` (`StudentFirstName`, `StudentLastName`, `StudentBirthDate`, `StudentEmail`, `StudentPhoneNumber`, `StudentSkill`) " +
+                    " VALUES ('" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getBirthDate() + "', '" + student.getEmail() + "', '" + student.getPhoneNumber() + "', '" + student.getSkill() + "');");
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            connection.close();
+
+        }
 
 
     }
