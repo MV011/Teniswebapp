@@ -37,9 +37,33 @@ public class StudentResource {
             MediaType.APPLICATION_XML})
     public List<Student> retrieveStudents() {
 
-        return studentRepository.getStudents();
+        List<Student> students = null;
+
+        try {
+            students = studentRepository.getStudents();
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+        return students;
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    @Path("{studentId}")
+    public Student getStudent(@PathParam("studentId") int studentId) {
 
+        Student student = null;
+
+        try {
+            student = studentRepository.getStudent(studentId);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+
+        return student;
+    }
 
 }
