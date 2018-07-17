@@ -3,12 +3,10 @@ package com.dare.teniswebapp;
 import com.dare.teniswebapp.model.Student;
 import com.dare.teniswebapp.repository.StudentRepository;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
+import java.util.List;
 
 @Path("students")
 public class StudentResource {
@@ -33,4 +31,15 @@ public class StudentResource {
 
         return student;
     }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    public List<Student> retrieveStudents() {
+
+        return studentRepository.getStudents();
+    }
+
+
+
 }

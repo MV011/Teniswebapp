@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public class StudentRepository {
 
@@ -32,7 +33,13 @@ public class StudentRepository {
             connection.close();
 
         }
+    }
 
+    public List<Student> getStudents() {
+
+        List<Student> students =null;
+
+        return students;
 
     }
 }
