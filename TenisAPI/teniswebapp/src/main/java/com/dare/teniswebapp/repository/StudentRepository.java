@@ -34,6 +34,77 @@ public class StudentRepository {
         }
     }
 
+    public Student update(int studentId, Student revision) throws Throwable {
+
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            connection = DBConn.start();
+
+            if(revision.getFirstName() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET StudentFirstName = '"+revision.getFirstName()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
+            if(revision.getLastName() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET StudentLastName = '"+revision.getLastName()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
+            if(revision.getBirthDate() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET StudentBirthDate = '"+revision.getBirthDate()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
+            if(revision.getEmail() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET StudentEmail = '"+revision.getEmail()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
+            if(revision.getPhoneNumber() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET StudentPhoneNumber = '"+revision.getPhoneNumber()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
+            if(revision.getSkill() != 0) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET StudentSkill = '"+revision.getSkill()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            connection.close();
+
+        }
+
+        return revision;
+
+
+    }
+
+    public void delete(int studentId) throws Throwable{
+
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            connection = DBConn.start();
+            statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM Student WHERE StudentID = "+studentId+";");
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            connection.close();
+
+        }
+    }
+
     public List<Student> getStudents() throws Throwable {
 
         List<Student> students = new ArrayList<Student>();

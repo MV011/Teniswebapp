@@ -12,6 +12,7 @@ import java.util.List;
 public class StudentResource {
 
     //TODO add requests
+    //TODO update responses
 
     private StudentRepository studentRepository = new StudentRepository();
 
@@ -30,6 +31,38 @@ public class StudentResource {
         }
 
         return student;
+    }
+
+    @PUT
+    @Path("{studentId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    public Student updateStudent(@PathParam("studentId") int studentId, Student student) {
+
+        Student updated = new Student();
+        try {
+            updated = studentRepository.update(studentId, student);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+
+        return updated;
+    }
+
+    @DELETE
+    @Path("{studentId}")
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    public void deleteStudent(@PathParam("studentId") int studentId) {
+
+        try {
+            studentRepository.delete(studentId);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
     }
 
     @GET
