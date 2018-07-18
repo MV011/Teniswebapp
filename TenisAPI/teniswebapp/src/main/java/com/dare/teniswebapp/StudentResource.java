@@ -66,4 +66,21 @@ public class StudentResource {
         return student;
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    @Path("search/{studentName}")
+    public List<Student> getStudents(@PathParam("studentName") String studentName) {
+
+        List<Student> students = null;
+
+        try {
+            students = studentRepository.getStudents(studentName);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+        return students;
+    }
+
 }

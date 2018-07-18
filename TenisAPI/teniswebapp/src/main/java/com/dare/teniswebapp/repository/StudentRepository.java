@@ -46,13 +46,7 @@ public class StudentRepository {
             statement = connection.createStatement();
             results = statement.executeQuery("SELECT StudentID, StudentFirstName, StudentLastName FROM Student;");
 
-            while(results.next()) {
-                Student tmp = new Student();
-                tmp.setId(results.getInt("StudentID"));
-                tmp.setFirstName(results.getString("StudentFirstName"));
-                tmp.setLastName(results.getString("StudentLastName"));
-                students.add(tmp);
-            }
+            parseResults(students, results);
 
         }
         catch(SQLException e) {
@@ -102,5 +96,43 @@ public class StudentRepository {
         }
 
         return student;
+    }
+
+    public List<Student> getStudents(String studentName) throws Throwable {
+
+        List<Student> students = new ArrayList<Student>();
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet results = null;
+
+        try {
+            connection = DBConn.start();
+            statement = connection.createStatement();
+            results = statement.executeQuery("SELECT StudentID, StudentFirstName, StudentLastName FROM Student WHERE StudentFirstName LIKE \"%Test%\" OR StudentLastName LIKE \"%Test%\";");
+
+            parseResults(students, results);
+
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            results.close();
+            statement.close();
+            connection.close();
+
+        }
+
+        return students;
+    }
+
+    private void parseResults(List<Student> students, ResultSet results) throws SQLException {
+        while(results.next()) {
+            Student tmp = new Student();
+            tmp.setId(results.getInt("StudentID"));
+            tmp.setFirstName(results.getString("StudentFirstName"));
+            tmp.setLastName(results.getString("StudentLastName"));
+            students.add(tmp);
+        }
     }
 }
