@@ -21,7 +21,7 @@ public class FeedbackResource {
     public Feedback createStudentParams(@PathParam("coachId") int coachId, @PathParam("studentId") int studentId, Feedback feedback) {
 
         try {
-            feedbackRepository.create(feedback);
+            feedbackRepository.create(coachId, studentId, feedback);
         }
         catch(Throwable e) {
             System.out.println(e);
