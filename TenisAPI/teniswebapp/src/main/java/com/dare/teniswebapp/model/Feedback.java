@@ -1,5 +1,8 @@
 package com.dare.teniswebapp.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Feedback {
     private int id;
     private String dateTime;
