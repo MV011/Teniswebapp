@@ -18,7 +18,7 @@ public class FeedbackResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
-    public Feedback createStudentParams(@PathParam("coachId") int coachId, @PathParam("studentId") int studentId, Feedback feedback) {
+    public Feedback createFeedback(@PathParam("coachId") int coachId, @PathParam("studentId") int studentId, Feedback feedback) {
 
         try {
             feedbackRepository.create(coachId, studentId, feedback);
