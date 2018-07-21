@@ -42,6 +42,44 @@ public class CoachRepository {
         }
     }
 
+    public void update(int coachId, Coach update) throws Throwable {
+
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            connection = DBConn.start();
+
+            if(update.getPhoneNumber() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Coach SET CoachPhoneNumber = '"+update.getPhoneNumber()+"' WHERE CoachID = "+coachId+";");
+                statement.close();
+            }
+            if(update.getFirstName() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Coach SET CoachFirstName = '"+update.getFirstName()+"' WHERE CoachID = "+coachId+";");
+                statement.close();
+            }
+            if(update.getLastName() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Coach SET CoachLastName = '"+update.getLastName()+"' WHERE CoachID = "+coachId+";");
+                statement.close();
+            }
+            if(update.getStartDate() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Coach SET CoachStartDate = '"+update.getStartDate()+"' WHERE CoachID = "+coachId+";");
+                statement.close();
+            }
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            connection.close();
+
+        }
+    }
+
     public void delete(int coachId) throws Throwable{
 
         Connection connection = null;
@@ -122,4 +160,5 @@ public class CoachRepository {
 
         return coach;
     }
+
 }

@@ -42,6 +42,23 @@ public class CoachResource {
         }
     }
 
+    @PUT
+    @Path("{coachId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    public Coach updateCoach(@PathParam("coachId") int coachId, Coach update) {
+
+        try {
+            coachRepository.update(coachId, update);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+
+        return update;
+    }
+
     @GET
     @Path("{coachId}")
     @Produces({MediaType.APPLICATION_JSON,
