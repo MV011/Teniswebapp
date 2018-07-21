@@ -12,6 +12,7 @@ import java.util.List;
 
 public class CoachRepository {
 
+    //Iterates through a results set
     private void parseResults(List<Coach> students, ResultSet results) throws SQLException {
         while(results.next()) {
             Coach tmp = new Coach();
@@ -22,140 +23,99 @@ public class CoachRepository {
         }
     }
 
+    //Create coach
     public void create(Coach coach) throws Throwable {
 
-        Connection connection = null;
         Statement statement = null;
 
-        try {
-            connection = DBConn.start();
+        try (Connection connection = DBConn.start()) {
             statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO `tenisdb`.`Coach` (`CoachFirstName`, `CoachLastName`, `CoachPhoneNumber`, `CoachStartDate`) " +
-                    "VALUES ('"+coach.getFirstName()+"', '"+coach.getLastName()+"', '"+coach.getPhoneNumber()+"', '"+coach.getStartDate()+"');");
-        }
-        catch(SQLException e) {
+                    "VALUES ('" + coach.getFirstName() + "', '" + coach.getLastName() + "', '" + coach.getPhoneNumber() + "', '" + coach.getStartDate() + "');");
+        } catch (SQLException e) {
             System.out.println(e);
-        }
-        finally {
-            connection.close();
-
         }
     }
 
+    //Update a specific coach
     public void update(int coachId, Coach update) throws Throwable {
 
-        Connection connection = null;
         Statement statement = null;
 
-        try {
-            connection = DBConn.start();
+        try (Connection connection = DBConn.start()) {
 
-            if(update.getPhoneNumber() != null) {
+            if (update.getPhoneNumber() != null) {
                 statement = connection.createStatement();
-                statement.executeUpdate("UPDATE Coach SET CoachPhoneNumber = '"+update.getPhoneNumber()+"' WHERE CoachID = "+coachId+";");
+                statement.executeUpdate("UPDATE Coach SET CoachPhoneNumber = '" + update.getPhoneNumber() + "' WHERE CoachID = " + coachId + ";");
                 statement.close();
             }
-            if(update.getFirstName() != null) {
+            if (update.getFirstName() != null) {
                 statement = connection.createStatement();
-                statement.executeUpdate("UPDATE Coach SET CoachFirstName = '"+update.getFirstName()+"' WHERE CoachID = "+coachId+";");
+                statement.executeUpdate("UPDATE Coach SET CoachFirstName = '" + update.getFirstName() + "' WHERE CoachID = " + coachId + ";");
                 statement.close();
             }
-            if(update.getLastName() != null) {
+            if (update.getLastName() != null) {
                 statement = connection.createStatement();
-                statement.executeUpdate("UPDATE Coach SET CoachLastName = '"+update.getLastName()+"' WHERE CoachID = "+coachId+";");
+                statement.executeUpdate("UPDATE Coach SET CoachLastName = '" + update.getLastName() + "' WHERE CoachID = " + coachId + ";");
                 statement.close();
             }
-            if(update.getStartDate() != null) {
+            if (update.getStartDate() != null) {
                 statement = connection.createStatement();
-                statement.executeUpdate("UPDATE Coach SET CoachStartDate = '"+update.getStartDate()+"' WHERE CoachID = "+coachId+";");
+                statement.executeUpdate("UPDATE Coach SET CoachStartDate = '" + update.getStartDate() + "' WHERE CoachID = " + coachId + ";");
                 statement.close();
             }
-        }
-        catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e);
-        }
-        finally {
-            connection.close();
-
         }
     }
 
-    public void delete(int coachId) throws Throwable{
+    //Delete the selected coach
+    public void delete(int coachId) throws Throwable {
 
-        Connection connection = null;
-        Statement statement = null;
-
-        try {
-            connection = DBConn.start();
-            statement = connection.createStatement();
+        try(Connection connection = DBConn.start()){
+            Statement statement = connection.createStatement();
             statement.executeUpdate("DELETE FROM Coach WHERE CoachID = "+coachId+";");
         }
         catch(SQLException e) {
             System.out.println(e);
         }
-        finally {
-            connection.close();
-
-        }
     }
 
+    //Retrieve all coaches (FirstName, LastName, ID)
     public List<Coach> getCoaches() throws Throwable {
 
         List<Coach> coaches = new ArrayList<>();
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet results = null;
 
-        try {
-            connection = DBConn.start();
-            statement = connection.createStatement();
-            results = statement.executeQuery("SELECT CoachID, CoachFirstName, CoachLastName FROM Coach;");
-
-            parseResults(coaches, results);
-
-        }
-        catch(SQLException e) {
+        try (Connection connection = DBConn.start()) {
+             Statement statement = connection.createStatement();
+             ResultSet results = statement.executeQuery("SELECT CoachID, CoachFirstName, CoachLastName FROM Coach;");
+             parseResults(coaches, results);
+        } catch (SQLException e) {
             System.out.println(e);
-        }
-        finally {
-            results.close();
-            statement.close();
-            connection.close();
-
         }
 
         return coaches;
     }
 
+    //Retrieve a specific coach
     public Coach getCoach(int coachId) throws Throwable{
 
         Coach coach = new Coach();
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet results = null;
 
-        try {
-            connection = DBConn.start();
-            statement = connection.createStatement();
-            results = statement.executeQuery("SELECT CoachID, CoachFirstName, CoachLastName, CoachStartDate, CoachPhoneNumber FROM Coach WHERE CoachID = "+coachId+";");
+        try (Connection connection = DBConn.start()) {
+
+            Statement statement = connection.createStatement();
+            ResultSet results = statement.executeQuery("SELECT CoachID, CoachFirstName, CoachLastName, CoachStartDate, CoachPhoneNumber FROM Coach " +
+                "WHERE CoachID = " + coachId + ";");
 
             results.first();
-
             coach.setId(results.getInt("CoachID"));
             coach.setFirstName(results.getString("CoachFirstName"));
             coach.setLastName(results.getString("CoachLastName"));
             coach.setPhoneNumber(results.getString("CoachPhoneNumber"));
             coach.setStartDate(results.getString("CoachStartDate"));
-
-        }
-        catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e);
-        }
-        finally {
-            results.close();
-            statement.close();
-            connection.close();
-
         }
 
         return coach;

@@ -11,10 +11,10 @@ import java.util.List;
 @Path("coaches")
 public class CoachResource {
 
-    CoachRepository coachRepository = new CoachRepository();
+    private CoachRepository coachRepository = new CoachRepository();
 
+    //Create coach - POST http://serveraddress/v1/coaches
     @POST
-    @Path("coach")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
@@ -30,35 +30,24 @@ public class CoachResource {
         return coach;
     }
 
-    @DELETE
-    @Path("{coachId}")
-    public void deleteCoach(@PathParam("coachId") int coachId) {
-
-        try {
-            coachRepository.delete(coachId);
-        }
-        catch(Throwable e) {
-            System.out.println(e);
-        }
-    }
-
-    @PUT
-    @Path("{coachId}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    //Retrieves CoachID, CoachFirstName, CoachLastName for all coaches - GET http://serveraddress/v1/coaches
+    @GET
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
-    public Coach updateCoach(@PathParam("coachId") int coachId, Coach update) {
+    public List<Coach> getCoaches() {
 
+        List<Coach> coaches = new ArrayList<>();
         try {
-            coachRepository.update(coachId, update);
+            coaches = coachRepository.getCoaches();
         }
         catch(Throwable e) {
             System.out.println(e);
         }
 
-        return update;
+        return coaches;
     }
 
+    //Retrieve all details for specific coach - GET http://serveraddress/v1/coaches/coachId
     @GET
     @Path("{coachId}")
     @Produces({MediaType.APPLICATION_JSON,
@@ -77,19 +66,34 @@ public class CoachResource {
         return coach;
     }
 
-    @GET
+    //Delete specific coach - DELETE http://serveraddress/v1/coaches/coachId
+    @DELETE
+    @Path("{coachId}")
+    public void deleteCoach(@PathParam("coachId") int coachId) {
+
+        try {
+            coachRepository.delete(coachId);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+    }
+
+    //Update specific coach - PUT http://serveraddress/v1/coaches/coachId
+    @PUT
+    @Path("{coachId}")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
-    public List<Coach> getCoaches() {
+    public Coach updateCoach(@PathParam("coachId") int coachId, Coach update) {
 
-        List<Coach> coaches = new ArrayList<>();
         try {
-            coaches = coachRepository.getCoaches();
+            coachRepository.update(coachId, update);
         }
         catch(Throwable e) {
             System.out.println(e);
         }
 
-        return coaches;
+        return update;
     }
 }
