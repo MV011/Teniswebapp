@@ -22,7 +22,7 @@ CREATE TABLE `Student` (
 
 CREATE TABLE `Feedback` (
   `FeedbackID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `FeedbackDate` datetime DEFAULT NULL,
+  `FeedbackDate` date DEFAULT NULL,
   `StudentID` int(10) unsigned NOT NULL,
   `CoachID` int(10) unsigned NOT NULL,
   `FeedbackRating` int(11) NOT NULL,
