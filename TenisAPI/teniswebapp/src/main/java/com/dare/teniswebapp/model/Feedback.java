@@ -1,13 +1,34 @@
 package com.dare.teniswebapp.model;
 
+import javax.json.bind.annotation.JsonbPropertyOrder;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {
+        "id",
+        "studentID",
+        "coachID",
+        "dateTime",
+        "rating",
+        "description"
+})
+@JsonbPropertyOrder({
+        "id",
+        "studentID",
+        "coachID",
+        "dateTime",
+        "rating",
+        "description"
+})
 public class Feedback {
     private int id;
     private String dateTime;
     private int studentID;
-    private int CoachID;
+    private int coachID;
     private short rating;
     private String description;
 
@@ -24,8 +45,8 @@ public class Feedback {
     public void setStudentID(int studentID) {
         this.studentID = studentID;
     }
-    public int getCoachID() { return CoachID; }
-    public void setCoachID(int coachID) { CoachID = coachID; }
+    public int getCoachID() { return coachID; }
+    public void setCoachID(int coachID) { this.coachID = coachID; }
     public short getRating() {
         return rating;
     }

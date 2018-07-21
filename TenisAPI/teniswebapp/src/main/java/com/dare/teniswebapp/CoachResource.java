@@ -30,6 +30,36 @@ public class CoachResource {
         return coach;
     }
 
+    @DELETE
+    @Path("{coachId}")
+    public void deleteCoach(@PathParam("coachId") int coachId) {
+
+        try {
+            coachRepository.delete(coachId);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+    }
+
+    @GET
+    @Path("{coachId}")
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    public Coach getCoach(@PathParam("coachId") int coachId) {
+
+        Coach coach = new Coach();
+
+        try {
+            coach = coachRepository.getCoach(coachId);
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+
+        return coach;
+    }
+
     @GET
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})

@@ -42,6 +42,25 @@ public class CoachRepository {
         }
     }
 
+    public void delete(int coachId) throws Throwable{
+
+        Connection connection = null;
+        Statement statement = null;
+
+        try {
+            connection = DBConn.start();
+            statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM Coach WHERE CoachID = "+coachId+";");
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            connection.close();
+
+        }
+    }
+
     public List<Coach> getCoaches() throws Throwable {
 
         List<Coach> coaches = new ArrayList<>();
@@ -68,5 +87,39 @@ public class CoachRepository {
         }
 
         return coaches;
+    }
+
+    public Coach getCoach(int coachId) throws Throwable{
+
+        Coach coach = new Coach();
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet results = null;
+
+        try {
+            connection = DBConn.start();
+            statement = connection.createStatement();
+            results = statement.executeQuery("SELECT CoachID, CoachFirstName, CoachLastName, CoachStartDate, CoachPhoneNumber FROM Coach WHERE CoachID = "+coachId+";");
+
+            results.first();
+
+            coach.setId(results.getInt("CoachID"));
+            coach.setFirstName(results.getString("CoachFirstName"));
+            coach.setLastName(results.getString("CoachLastName"));
+            coach.setPhoneNumber(results.getString("CoachPhoneNumber"));
+            coach.setStartDate(results.getString("CoachStartDate"));
+
+        }
+        catch(SQLException e) {
+            System.out.println(e);
+        }
+        finally {
+            results.close();
+            statement.close();
+            connection.close();
+
+        }
+
+        return coach;
     }
 }
