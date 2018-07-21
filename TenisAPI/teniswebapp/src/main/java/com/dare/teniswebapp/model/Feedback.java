@@ -33,6 +33,7 @@ public class Feedback {
     private String description;
 
     public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
     public String getDateTime() {
         return dateTime;
     }
