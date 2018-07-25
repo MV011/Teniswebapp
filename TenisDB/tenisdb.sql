@@ -33,3 +33,12 @@ CREATE TABLE `Feedback` (
   CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`StudentID`) REFERENCES `student` (`studentid`),
   CONSTRAINT `feedback_ibfk_2` FOREIGN KEY (`CoachID`) REFERENCES `coach` (`coachid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE Team (
+
+TeamID int(10) unsigned NOT NULL AUTO_INCREMENT,
+TeamDateTime datetime NOT NULL,
+TeamStudents json NOT NULL,
+PRIMARY KEY (TeamID)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
