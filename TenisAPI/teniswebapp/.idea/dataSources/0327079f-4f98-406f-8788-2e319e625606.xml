@@ -1107,147 +1107,180 @@
     <table id="277" parent="6" name="Coach"/>
     <table id="278" parent="6" name="Feedback"/>
     <table id="279" parent="6" name="Student"/>
-    <column id="280" parent="277" name="CoachID">
+    <table id="280" parent="6" name="Team"/>
+    <column id="281" parent="277" name="CoachID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="277" name="CoachFirstName">
+    <column id="282" parent="277" name="CoachFirstName">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="277" name="CoachLastName">
+    <column id="283" parent="277" name="CoachLastName">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="277" name="CoachPhoneNumber">
+    <column id="284" parent="277" name="CoachPhoneNumber">
       <Position>4</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="277" name="CoachStartDate">
+    <column id="285" parent="277" name="CoachStartDate">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="285" parent="277" name="PRIMARY">
+    <key id="286" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CoachID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="286" parent="278" name="FeedbackID">
+    <column id="287" parent="278" name="FeedbackID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="278" name="FeedbackDate">
+    <column id="288" parent="278" name="FeedbackDate">
       <Position>2</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="278" name="StudentID">
+    <column id="289" parent="278" name="StudentID">
       <Position>3</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="278" name="CoachID">
+    <column id="290" parent="278" name="CoachID">
       <Position>4</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="278" name="FeedbackRating">
+    <column id="291" parent="278" name="FeedbackRating">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="278" name="FeedbackDescription">
+    <column id="292" parent="278" name="FeedbackDescription">
       <Position>6</Position>
       <DataType>varchar(1000)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="292" parent="278" name="StudentID">
+    <index id="293" parent="278" name="StudentID">
       <ColNames>StudentID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="293" parent="278" name="CoachID">
+    <index id="294" parent="278" name="CoachID">
       <ColNames>CoachID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="294" parent="278" name="PRIMARY">
+    <key id="295" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>FeedbackID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="295" parent="278" name="feedback_ibfk_1">
+    <foreign-key id="296" parent="278" name="feedback_ibfk_1">
       <ColNames>StudentID</ColNames>
       <RefSchemaName>tenisdb</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>studentid</RefColNames>
     </foreign-key>
-    <foreign-key id="296" parent="278" name="feedback_ibfk_2">
+    <foreign-key id="297" parent="278" name="feedback_ibfk_2">
       <ColNames>CoachID</ColNames>
       <RefSchemaName>tenisdb</RefSchemaName>
       <RefTableName>coach</RefTableName>
       <RefColNames>coachid</RefColNames>
     </foreign-key>
-    <column id="297" parent="279" name="StudentID">
+    <column id="298" parent="279" name="StudentID">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="279" name="StudentFirstName">
+    <column id="299" parent="279" name="StudentFirstName">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="279" name="StudentLastName">
+    <column id="300" parent="279" name="StudentLastName">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="279" name="StudentBirthDate">
+    <column id="301" parent="279" name="StudentBirthDate">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="279" name="StudentEmail">
+    <column id="302" parent="279" name="StudentEmail">
       <Position>5</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="279" name="StudentPhoneNumber">
+    <column id="303" parent="279" name="StudentPhoneNumber">
       <Position>6</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="279" name="StudentSkill">
+    <column id="304" parent="279" name="StudentSkill">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="304" parent="279" name="PRIMARY">
+    <column id="305" parent="279" name="TeamID">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="306" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>StudentID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="307" parent="280" name="TeamID">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="308" parent="280" name="TeamDateTime">
+      <Position>2</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="309" parent="280" name="TeamStudents">
+      <Position>3</Position>
+      <DataType>json|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="310" parent="280" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TeamID</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

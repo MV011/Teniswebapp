@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlType;
         "birthDate",
         "email",
         "phoneNumber",
-        "skill"
+        "skill",
+        "teamId"
 })
 @JsonbPropertyOrder({
         "id",
@@ -24,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
         "birthDate",
         "email",
         "phoneNumber",
-        "skill"
+        "skill",
+        "teamId"
 })
 public class Student {
 
@@ -36,6 +38,7 @@ public class Student {
     private String email;
     private String phoneNumber;
     private short skill;
+    private int teamId;
 
     public int getId() {
         return id;
@@ -78,5 +81,13 @@ public class Student {
     }
     public void setSkill(short skill) {
         this.skill = skill;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 }

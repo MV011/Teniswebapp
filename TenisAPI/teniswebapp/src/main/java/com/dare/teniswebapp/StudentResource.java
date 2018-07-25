@@ -11,7 +11,6 @@ import java.util.List;
 @Path("students")
 public class StudentResource {
 
-    //TODO add requests
     //TODO update responses
 
     private StudentRepository studentRepository = new StudentRepository();

@@ -72,6 +72,11 @@ public class StudentRepository {
                 statement.executeUpdate("UPDATE Student SET StudentSkill = '"+revision.getSkill()+"' WHERE StudentID = "+studentId+";");
                 statement.close();
             }
+            if(revision.getTeamId() != 0) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET TeamID = '"+revision.getTeamId()+"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
         }
         catch(SQLException e) {
             System.out.println(e);
@@ -154,6 +159,7 @@ public class StudentRepository {
             student.setEmail(results.getString("StudentEmail"));
             student.setPhoneNumber(results.getString("StudentPhoneNumber"));
             student.setSkill((short) results.getInt("StudentSkill"));
+            student.setTeamId(results.getInt("TeamID"));
 
         }
         catch(SQLException e) {
