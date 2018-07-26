@@ -1,5 +1,7 @@
 CREATE DATABASE `tenisdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
 
+USE tenisdb;
+
 CREATE TABLE `Coach` (
   `CoachID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `CoachFirstName` varchar(45) NOT NULL,
@@ -9,20 +11,9 @@ CREATE TABLE `Coach` (
   PRIMARY KEY (`CoachID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `Student` (
-  `StudentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `StudentFirstName` varchar(45) NOT NULL,
-  `StudentLastName` varchar(45) NOT NULL,
-  `StudentBirthDate` date NOT NULL,
-  `StudentEmail` varchar(45) DEFAULT NULL,
-  `StudentPhoneNumber` varchar(45) DEFAULT NULL,
-  `StudentSkill` int(11) NOT NULL,
-  PRIMARY KEY (`StudentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
 CREATE TABLE `Feedback` (
   `FeedbackID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `FeedbackDate` date DEFAULT NULL,
+  `FeedbackDate` date NOT NULL,
   `StudentID` int(10) unsigned NOT NULL,
   `CoachID` int(10) unsigned NOT NULL,
   `FeedbackRating` int(11) NOT NULL,
@@ -34,11 +25,24 @@ CREATE TABLE `Feedback` (
   CONSTRAINT `feedback_ibfk_2` FOREIGN KEY (`CoachID`) REFERENCES `coach` (`coachid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE Team (
+CREATE TABLE `Student` (
+  `StudentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `StudentFirstName` varchar(45) NOT NULL,
+  `StudentLastName` varchar(45) NOT NULL,
+  `StudentBirthDate` date NOT NULL,
+  `StudentEmail` varchar(45) DEFAULT NULL,
+  `StudentPhoneNumber` varchar(45) DEFAULT NULL,
+  `StudentSkill` int(11) NOT NULL,
+  `TeamID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`StudentID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-TeamID int(10) unsigned NOT NULL AUTO_INCREMENT,
-TeamDateTime datetime NOT NULL,
-TeamStudents json NOT NULL,
-PRIMARY KEY (TeamID)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `Team` (
+  `TeamID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `TeamDateTime` json NOT NULL,
+  `TeamStudents` json NOT NULL,
+  `CoachID` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`TeamID`),
+  KEY `Coach.CoachID_idx` (`CoachID`),
+  CONSTRAINT `CoachID` FOREIGN KEY (`CoachID`) REFERENCES `coach` (`coachid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
