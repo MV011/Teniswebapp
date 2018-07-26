@@ -24,7 +24,7 @@ public class Team {
     //TODO Define timeframes in SQL for students/teams
 
     private int id;
-    private String dateTime;
+    private JsonObject dateTime;
     private JsonArray students;
 
     public int getId() {
@@ -35,11 +35,11 @@ public class Team {
         this.id = id;
     }
 
-    public String getDateTime() {
+    public JsonObject getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(String dateTime) {
+    public void setDateTime(JsonObject dateTime) {
         this.dateTime = dateTime;
     }
 

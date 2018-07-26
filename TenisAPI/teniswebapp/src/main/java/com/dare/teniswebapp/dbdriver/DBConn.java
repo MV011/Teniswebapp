@@ -20,7 +20,7 @@ public class DBConn {
 
         public static Connection start() throws Throwable {
 
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             conn = DriverManager.getConnection(dbURL, username, password);
 
