@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observer;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -127,7 +126,22 @@ public class TeamRepository {
     //Get specific team
     public Team get(int teamId) throws Throwable {
 
-        return null;
+        Team team = new Team();
+        Statement statement;
+        try(Connection connection = DBConn.start()) {
+            statement = connection.createStatement();
+            ResultSet results = statement.executeQuery("SELECT * FROM Team WHERE TeamID = "+teamId+";");
+            results.first();
+
+            JsonReader reader = Json.createReader(new StringReader(results.getString("TeamDateTime")));
+            team.setId(teamId);
+            team.setDateTime(reader.readObject());
+            reader.close();
+            reader = Json.createReader(new StringReader(results.getString("TeamStudents")));
+            team.setStudents(reader.readArray());
+        }
+
+        return team;
     }
 
     //Delete specific team
