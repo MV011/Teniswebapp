@@ -38,13 +38,14 @@ public class TeamRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            ResultSet results = statement.executeQuery("SELECT TeamID, TeamDateTime FROM Team");
+            ResultSet results = statement.executeQuery("SELECT TeamID, TeamDateTime, CoachID FROM Team");
 
             while(results.next()) {
                 JsonReader reader = Json.createReader(new StringReader(results.getString("TeamDateTime")));
                 Team tmp = new Team();
                 tmp.setId(results.getInt("TeamID"));
                 tmp.setDateTime(reader.readObject());
+                tmp.setCoachId(results.getInt("CoachID"));
 
                 result.add(tmp);
             }
@@ -81,6 +82,11 @@ public class TeamRepository {
             if(update.getDateTime() != null) {
                 statement = connection.createStatement();
                 statement.executeUpdate("UPDATE Team SET TeamDateTime = '"+update.getDateTime().toString()+"' WHERE TeamID = "+teamId+";");
+                statement.close();
+            }
+            if(update.getCoachId() !=0) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Team SET CoachID = "+update.getCoachId()+";");
                 statement.close();
             }
             if(update.getStudents() != null) {
@@ -139,6 +145,7 @@ public class TeamRepository {
             reader.close();
             reader = Json.createReader(new StringReader(results.getString("TeamStudents")));
             team.setStudents(reader.readArray());
+            team.setCoachId(results.getInt("CoachID"));
         }
 
         return team;

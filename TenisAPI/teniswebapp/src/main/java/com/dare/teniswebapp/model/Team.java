@@ -26,6 +26,7 @@ public class Team {
     private int id;
     private JsonObject dateTime;
     private JsonArray students;
+    private int coachId;
 
     public int getId() {
         return id;
@@ -49,5 +50,13 @@ public class Team {
 
     public void setStudents(JsonArray students) {
         this.students = students;
+    }
+
+    public int getCoachId() {
+        return coachId;
+    }
+
+    public void setCoachId(int coachId) {
+        this.coachId = coachId;
     }
 }
