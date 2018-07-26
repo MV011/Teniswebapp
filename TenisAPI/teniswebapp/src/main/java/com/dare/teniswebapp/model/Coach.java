@@ -13,13 +13,16 @@ import javax.xml.bind.annotation.XmlType;
         "firstName",
         "lastName",
         "phoneNumber",
-        "startDate"
+        "startDate",
+        "feedbackRating"
 })
 @JsonbPropertyOrder({
         "id",
         "firstName",
         "lastName",
-        "phoneNumber"
+        "phoneNumber",
+        "startDate",
+        "feedbackRating"
 })
 public class Coach {
 
@@ -30,6 +33,7 @@ public class Coach {
     private String lastName;
     private String phoneNumber;
     private String startDate;
+    private float feedbackRating;
 
     public int getId() {
         return id;
@@ -66,5 +70,13 @@ public class Coach {
 
     public void setStartDate(String startDate) {
         this.startDate = startDate;
+    }
+
+    public float getFeedbackRating() {
+        return feedbackRating;
+    }
+
+    public void setFeedbackRating(float feedbackRating) {
+        this.feedbackRating = feedbackRating;
     }
 }

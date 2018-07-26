@@ -1268,7 +1268,7 @@
     </column>
     <column id="308" parent="280" name="TeamDateTime">
       <Position>2</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1278,10 +1278,26 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="310" parent="280" name="PRIMARY">
+    <column id="310" parent="280" name="CoachID">
+      <Position>4</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="311" parent="280" name="Coach.CoachID_idx">
+      <ColNames>CoachID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="312" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TeamID</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="313" parent="280" name="CoachID">
+      <ColNames>CoachID</ColNames>
+      <RefSchemaName>tenisdb</RefSchemaName>
+      <RefTableName>Coach</RefTableName>
+      <RefColNames>coachid</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

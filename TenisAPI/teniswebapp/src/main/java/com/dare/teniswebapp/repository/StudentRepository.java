@@ -203,6 +203,23 @@ public class StudentRepository {
         return students;
     }
 
+    public List<Student> getUnassigned() throws Throwable {
+
+        List<Student> students = new ArrayList<Student>();
+        Statement statement = null;
+        ResultSet results = null;
+
+        try(Connection connection = DBConn.start()) {
+            statement = connection.createStatement();
+            results = statement.executeQuery("SELECT StudentID, StudentFirstName, StudentLastName FROM Student WHERE TeamID = 0");
+
+            parseResults(students, results);
+
+        }
+
+        return students;
+    }
+
     private void parseResults(List<Student> students, ResultSet results) throws SQLException {
         while(results.next()) {
             Student tmp = new Student();
@@ -212,4 +229,6 @@ public class StudentRepository {
             students.add(tmp);
         }
     }
+
+
 }

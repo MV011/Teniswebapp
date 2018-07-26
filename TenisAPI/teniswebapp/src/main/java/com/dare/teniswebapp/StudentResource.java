@@ -67,7 +67,7 @@ public class StudentResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON,
             MediaType.APPLICATION_XML})
-    public List<Student> retrieveStudents() {
+    public List<Student> getStudents() {
 
         List<Student> students = null;
 
@@ -77,6 +77,24 @@ public class StudentResource {
         catch(Throwable e) {
             System.out.println(e);
         }
+        return students;
+    }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON,
+            MediaType.APPLICATION_XML})
+    @Path("unassigned")
+    public List<Student> getUnassignedStudents() {
+
+        List<Student> students = null;
+
+        try {
+            students = studentRepository.getUnassigned();
+        }
+        catch(Throwable e) {
+            System.out.println(e);
+        }
+
         return students;
     }
 

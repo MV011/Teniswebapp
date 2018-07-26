@@ -114,6 +114,10 @@ public class CoachRepository {
             coach.setLastName(results.getString("CoachLastName"));
             coach.setPhoneNumber(results.getString("CoachPhoneNumber"));
             coach.setStartDate(results.getString("CoachStartDate"));
+
+            results = statement.executeQuery("SELECT ROUND(avg(FeedbackRating),2) AS Rating FROM tenisdb.Feedback WHERE CoachID ="+coachId+";");
+            results.first();
+            coach.setFeedbackRating(results.getFloat("Rating"));
         } catch (SQLException e) {
             System.out.println(e);
         }
