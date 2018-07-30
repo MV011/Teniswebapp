@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <select name="teams">
+      <option *ngFor="let team of teamList" [value]="team.id">Grupa {{team.id}}</option>
+    </select>
+
+    <br />
+    <form name="students">
+      <div *ngFor="let student of studentsList">
+        <input type="radio" [value]="student.id">{{student.firstName}}
+      </div>
+    </form>
+    <br />
+    <select name="session">
+      <option value="session1">Session 1</option>
+      <option value="session2">Session 2</option>
+      <option value="session3">Session 3</option>
+    </select>
+    <br />
+    <button type="button">Start</button>
+
+    Add rating select page
+    Add description enter page + submit
+  </div>
+</div>

@@ -12,12 +12,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder = {
         "id",
         "dateTime",
-        "students"
+        "students",
+        "coachId"
 })
 @JsonbPropertyOrder({
         "id",
         "dateTime",
-        "students"
+        "students",
+        "coachId"
 })
 public class Team {
 
