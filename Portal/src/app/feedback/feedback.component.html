@@ -1,13 +1,15 @@
 <div>
   <div>
-    <select name="teams">
-      <option *ngFor="let team of teamList" [value]="team.id">Grupa {{team.id}}</option>
-    </select>
-
+    <label title="Grupa">
+      <select [(ngModel)]="teamId" (change)="getStudentNames()">
+        <option>Selecteaza grupa</option>
+        <option *ngFor="let team of teamsList" [value]="team.id">Grupa {{team.id}}</option>
+      </select>
+    </label>
     <br />
     <form name="students">
       <div *ngFor="let student of studentsList">
-        <input type="radio" [value]="student.id">{{student.firstName}}
+        <input type="radio" [value]="student.id">{{student.firstName}} {{student.lastName}}
       </div>
     </form>
     <br />
@@ -17,7 +19,7 @@
       <option value="session3">Session 3</option>
     </select>
     <br />
-    <button type="button">Start</button>
+    <button type="button" >Start</button>
 
     Add rating select page
     Add description enter page + submit

@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {FeedbackModule} from './feedback/feedback.module';
 import {FeedbackComponent} from './feedback/feedback.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule, FeedbackModule
+    BrowserModule, FeedbackModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent, FeedbackComponent]

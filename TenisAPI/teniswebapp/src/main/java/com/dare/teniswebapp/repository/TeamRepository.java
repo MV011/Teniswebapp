@@ -4,9 +4,7 @@ import com.dare.teniswebapp.dbdriver.DBConn;
 import com.dare.teniswebapp.model.Student;
 import com.dare.teniswebapp.model.Team;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonReader;
+import javax.json.*;
 import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,6 +20,7 @@ public class TeamRepository {
 
     //Update team field for specific students
     private void updateStudentTeams(JsonArray students, int id) throws Throwable {
+
         for(int i=0; i<students.size(); i++) {
             Student temp = new Student();
             temp.setTeamId(id);
@@ -38,14 +37,17 @@ public class TeamRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            ResultSet results = statement.executeQuery("SELECT TeamID, TeamDateTime, CoachID FROM Team");
+            ResultSet results = statement.executeQuery("SELECT * FROM Team");
 
             while(results.next()) {
                 JsonReader reader = Json.createReader(new StringReader(results.getString("TeamDateTime")));
                 Team tmp = new Team();
                 tmp.setId(results.getInt("TeamID"));
                 tmp.setDateTime(reader.readObject());
+                reader.close();
                 tmp.setCoachId(results.getInt("CoachID"));
+                reader = Json.createReader(new StringReader(results.getString("TeamStudents")));
+                tmp.setStudents(reader.readArray());
 
                 result.add(tmp);
             }
@@ -61,14 +63,13 @@ public class TeamRepository {
 
         try (Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO Team (TeamDateTime, TeamStudents) VALUES ("+
-                    " '"+ team.getDateTime() + "', '" + students.toString() + "');");
+            statement.executeUpdate("INSERT INTO Team (TeamDateTime, TeamStudents, CoachID) VALUES ("+
+                    " '"+ team.getDateTime().toString() + "', '" + students.toString() + "', "+team.getCoachId()+");");
 
             statement.close();
             Statement statement2 = connection.createStatement();
             ResultSet result = statement2.executeQuery("SELECT MAX(TeamID) AS TeamID FROM Team");
             result.first();
-
             updateStudentTeams(students, result.getInt("TeamID"));
 
         }

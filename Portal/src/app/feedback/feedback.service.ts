@@ -1,13 +1,17 @@
 import {Injectable} from '@angular/core';
 import {IFeedback} from './feedback';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedbackService {
 
-  getFeedback(coachId: number): IFeedback[] {
+  private baseUrl = 'localhost/v1/feedback';
 
-    return null;
+  constructor(private http: HttpClient) {}
+  getCoachFeedback(coachId: number) {
+
+    return this.http.get<IFeedback[]>( this.baseUrl + `/${coachId}`);
   }
 }
