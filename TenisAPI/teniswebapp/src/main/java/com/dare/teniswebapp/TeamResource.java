@@ -16,8 +16,7 @@ public class TeamResource {
     //Create a new team - POST http://serveraddress/v1/teams
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Team createTeam(Team team) {
 
         try {
@@ -31,8 +30,7 @@ public class TeamResource {
 
     //Retrieve all teams summary - GET http://serveraddress/v1/teams
     @GET
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Team> getTeams() {
 
         List<Team> teams = new ArrayList<>();
@@ -51,8 +49,7 @@ public class TeamResource {
     //Retrieve specific team - GET http://serveraddress/v1/teams/{teamId}
     @GET
     @Path("{teamId}")
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Team getTeam(@PathParam("teamId") int teamId) {
 
         Team result = new Team();
@@ -71,8 +68,7 @@ public class TeamResource {
     @PUT
     @Path("{teamId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Team updateTeam(@PathParam("teamId") int teamId, Team update) {
 
         try {

@@ -1,9 +1,9 @@
 export interface IFeedback {
 
   id: number;
-  dateTime: string;
   studentID: number;
   coachID: number;
+  dateTime: string;
   rating: number;
   description: string;
 }

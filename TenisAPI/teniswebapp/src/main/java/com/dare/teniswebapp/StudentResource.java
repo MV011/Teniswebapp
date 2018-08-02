@@ -17,10 +17,8 @@ public class StudentResource {
 
     //Create a new student - POST http://serveraddress/v1/student
     @POST
-    @Path("student")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Student createStudentParams(Student student) {
 
         try {
@@ -35,8 +33,7 @@ public class StudentResource {
 
     //Retrieve all students - GET http://serveraddress/v1/student
     @GET
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Student> getStudents() {
 
         List<Student> students = null;
@@ -52,8 +49,7 @@ public class StudentResource {
 
     //Get student details - GET http://serveraddress/v1/students/{studentId}
     @GET
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("{studentId}")
     public Student getStudent(@PathParam("studentId") int studentId) {
 
@@ -73,8 +69,7 @@ public class StudentResource {
     @PUT
     @Path("{studentId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Student updateStudent(@PathParam("studentId") int studentId, Student student) {
 
         Student updated = new Student();
@@ -91,8 +86,7 @@ public class StudentResource {
     //Delete specific student - DELETE http://serveraddress/v1/students/{studentId}
     @DELETE
     @Path("{studentId}")
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public void deleteStudent(@PathParam("studentId") int studentId) {
 
         try {
@@ -105,8 +99,7 @@ public class StudentResource {
 
     //Get students not in teams - GET http://serveraddress/v1/students/unassigned
     @GET
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("unassigned")
     public List<Student> getUnassignedStudents() {
 
@@ -125,8 +118,7 @@ public class StudentResource {
 
     //Search for student names - GET http://serveraddress/v1/students/search/{studentName}
     @GET
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("search/{studentName}")
     public List<Student> getStudents(@PathParam("studentName") String studentName) {
 

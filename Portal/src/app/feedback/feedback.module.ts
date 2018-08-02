@@ -4,6 +4,7 @@ import { FeedbackComponent} from './feedback.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {FormsModule} from '@angular/forms';
   ],
   exports: [
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [FeedbackComponent]
 })
 export class FeedbackModule { }

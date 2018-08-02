@@ -16,8 +16,7 @@ public class CoachResource {
     //Create coach - POST http://serveraddress/v1/coaches
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Coach createCoach(Coach coach) {
 
         try {
@@ -32,8 +31,7 @@ public class CoachResource {
 
     //Retrieves CoachID, CoachFirstName, CoachLastName for all coaches - GET http://serveraddress/v1/coaches
     @GET
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Coach> getCoaches() {
 
         List<Coach> coaches = new ArrayList<>();
@@ -50,8 +48,7 @@ public class CoachResource {
     //Retrieve all details for specific coach - GET http://serveraddress/v1/coaches/coachId
     @GET
     @Path("{coachId}")
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Coach getCoach(@PathParam("coachId") int coachId) {
 
         Coach coach = new Coach();
@@ -83,8 +80,7 @@ public class CoachResource {
     @PUT
     @Path("{coachId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public Coach updateCoach(@PathParam("coachId") int coachId, Coach update) {
 
         try {

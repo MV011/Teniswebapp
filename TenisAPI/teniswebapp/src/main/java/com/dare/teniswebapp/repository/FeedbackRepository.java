@@ -31,7 +31,7 @@ public class FeedbackRepository {
         try (Connection connection = DBConn.start()) {
             statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO Feedback (FeedbackDate, StudentID, CoachID, FeedbackRating, FeedbackDescription) " +
-                    "VALUES (CURRENT_DATE, '" + coachId + "', '" + studentId + "', '" + feedback.getRating() + "', \"" + feedback.getDescription() + "\");");
+                    "VALUES (CURRENT_DATE, '" + studentId + "', '" + coachId + "', '" + feedback.getRating() + "', \"" + feedback.getDescription() + "\");");
         } catch (SQLException e) {
             System.out.println(e);
         }

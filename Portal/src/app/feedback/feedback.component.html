@@ -2,24 +2,26 @@
   <div>
     <label title="Grupa">
       <select [(ngModel)]="teamId" (change)="getStudentNames()">
-        <option>Selecteaza grupa</option>
-        <option *ngFor="let team of teamsList" [value]="team.id">Grupa {{team.id}}</option>
+        <option selected="selected" value="default" style="display:none"></option>
+        <option *ngFor="let team of teamsList; let i=index" [value]="i">Grupa {{team.id}}</option>
       </select>
     </label>
     <br />
-    <form name="students">
+    <form title="Elevi" (change)="studentSelected=true">
+      <input type="radio" name="students" checked="checked" style="visibility: hidden">
       <div *ngFor="let student of studentsList">
-        <input type="radio" [value]="student.id">{{student.firstName}} {{student.lastName}}
+        <input type="radio" name= "students" [(ngModel)]="studentId" [value]="student.id">{{student.firstName}} {{student.lastName}}
       </div>
     </form>
     <br />
-    <select name="session">
-      <option value="session1">Session 1</option>
-      <option value="session2">Session 2</option>
-      <option value="session3">Session 3</option>
-    </select>
+    <!--FOR UPDATE: HOW WILL THE SESSIONS BE STORED?-->
+    <!--<select name="session">-->
+      <!--<option value="session1">Session 1</option>-->
+      <!--<option value="session2">Session 2</option>-->
+      <!--<option value="session3">Session 3</option>-->
+    <!--</select>-->
     <br />
-    <button type="button" >Start</button>
+    <button type="button" *ngIf="studentSelected" (click)="tempCreateFeedback()">Start</button>
 
     Add rating select page
     Add description enter page + submit

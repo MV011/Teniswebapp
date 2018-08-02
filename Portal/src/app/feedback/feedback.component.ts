@@ -3,6 +3,9 @@ import {TeamService} from '../team/team.service';
 import {StudentService} from '../student/student.service';
 import {ITeam} from '../team/team';
 import {IStudent} from '../student/student';
+import {FeedbackService} from './feedback.service';
+import {IFeedback} from './feedback';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'active-component',
@@ -13,21 +16,41 @@ export class FeedbackComponent implements OnInit {
 
   teamsList: ITeam[] = [];
   errorMessage: string;
-  constructor(private teamService: TeamService, private studentService: StudentService) {
-  }
-
   studentsList: IStudent[] = [];
   tempStudent: IStudent;
   teamId: number;
+  studentId: number;
+  studentSelected = false;
+
+  constructor(private datePipe: DatePipe,
+              private feedbackService: FeedbackService,
+              private teamService: TeamService,
+              private studentService: StudentService) {
+  }
+
+  tempCreateFeedback(): void {
+    const tempDate = new Date(Date.now());
+    const tempFeedback: IFeedback = {
+      id: 0,
+      dateTime: this.datePipe.transform(tempDate.toLocaleDateString(), 'yyy-MM-dd'),
+      studentID: this.studentId,
+      coachID: this.teamsList[this.teamId].coachId,
+      rating: 3,
+      description: 'Test description'
+    };
+    this.feedbackService.createFeedback(this.teamsList[this.teamId].coachId,
+                                    this.studentId, JSON.parse(JSON.stringify(tempFeedback)))
+      .subscribe(
+      error => this.errorMessage = <any>error
+    );
+  }
 
   getStudentNames(): void {
     this.studentsList = [];
-    for (const student of this.teamsList[this.teamId - 1].students) {
-      console.log(this.teamId);
+    for (const student of this.teamsList[this.teamId].students) {
       this.studentService.getInfo(student.id).subscribe(
         tempStudent => {
           this.tempStudent = tempStudent;
-          console.log(JSON.stringify(tempStudent));
           this.studentsList.push(tempStudent);
         },
         error => this.errorMessage = <any>error
