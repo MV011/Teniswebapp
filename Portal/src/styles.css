@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: blue;
+  margin: 0 0;
+}
+
+/*Header navigation*/
+header {
+  width: 100%;
+  height: 10%;
+  background-color: aquamarine;
+  margin: 0 0;
+  color: brown;
+}
+
+header ul {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  display: inline;
+  margin: 5px;
+  font-size: 30px;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header a:hover {
+  color: chartreuse;
+}

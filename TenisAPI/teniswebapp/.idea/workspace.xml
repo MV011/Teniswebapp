@@ -7,52 +7,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85bbef04-6c3d-4320-9927-f9c18091c420" name="Default" comment="fixed omitted team property">
-      <change beforePath="$PROJECT_DIR$/../../Portal/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/package.json" afterDir="false" />
+    <list default="true" id="85bbef04-6c3d-4320-9927-f9c18091c420" name="Default" comment="Removed XML&#10;Fixed ResponseFilter&#10;Removed extra dependencies&#10;FE">
       <change beforePath="$PROJECT_DIR$/../../Portal/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CoachResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CoachResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/TeamResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/TeamResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Coach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/CoachResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/CoachResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/FeedbackResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/FeedbackResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/StudentResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/StudentResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/TeamResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/TeamResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Coach.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Coach.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/model/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/repository/FeedbackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/repository/FeedbackRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/CoachResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/CoachResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/FeedbackResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/FeedbackResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/StudentResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/StudentResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/TeamResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/TeamResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Coach.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Coach.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/model/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/repository/FeedbackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/repository/FeedbackRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/lib/jaxb-api-2.3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/lib/jaxb-impl-2.3.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,15 +51,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9029" />
-          <entry key="txt" value="714" />
+          <entry key="java" value="9039" />
+          <entry key="txt" value="782" />
           <entry key="xml" value="150" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9028" />
-          <entry key="PLAIN_TEXT" value="714" />
+          <entry key="JAVA" value="9038" />
+          <entry key="PLAIN_TEXT" value="782" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="150" />
         </counts>
@@ -104,13 +67,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="MODULES/mdl-teniswebapp" value="1" />
-          <entry key="java" value="40" />
+          <entry key="java" value="42" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="40" />
+          <entry key="JAVA" value="42" />
           <entry key="UML" value="1" />
           <entry key="XML" value="5" />
         </counts>
@@ -148,14 +111,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="702">
+              <caret line="59" column="83" lean-forward="true" selection-start-line="59" selection-start-column="83" selection-end-line="59" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -178,11 +162,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="330">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,9 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/TeamRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/TeamResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CoachResource.java" />
@@ -237,6 +219,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java" />
       </list>
     </option>
   </component>
@@ -263,10 +247,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="812" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -362,7 +346,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533173280016" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533504178970" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -572,7 +556,7 @@
       <workItem from="1532535547991" duration="33000" />
       <workItem from="1532535703945" duration="24820000" />
       <workItem from="1532886837057" duration="75000" />
-      <workItem from="1532985346701" duration="30779000" />
+      <workItem from="1532985346701" duration="33666000" />
     </task>
     <task id="LOCAL-00001" summary="Asd">
       <created>1532124677923</created>
@@ -679,14 +663,22 @@
       <option name="project" value="LOCAL" />
       <updated>1532987592294</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Removed XML&#10;Fixed ResponseFilter&#10;Removed extra dependencies&#10;FE">
+      <created>1533173521363</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1533173521363</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82663000" />
+    <option name="totallyTimeSpent" value="85550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="812" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -706,7 +698,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5029586" side_tool="true" weight="0.27030304" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.49704143" visible="true" weight="0.25416666" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.49704143" visible="true" weight="0.25957447" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -784,7 +776,8 @@
     <MESSAGE value="Added - feedbackRating to Coach&#10;Changed - GET /coaches/{coachID} - added feedback rating query&#10;Added - GET /students/unassigned - get unassigned students" />
     <MESSAGE value="Students cleanup and comments" />
     <MESSAGE value="fixed omitted team property" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed omitted team property" />
+    <MESSAGE value="Removed XML&#10;Fixed ResponseFilter&#10;Removed extra dependencies&#10;FE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed XML&#10;Fixed ResponseFilter&#10;Removed extra dependencies&#10;FE" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" />
@@ -844,16 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="121" column="34" lean-forward="true" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/StudentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -888,13 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -970,16 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://MODULES/mdl-teniswebapp">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1015,8 +981,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="702">
+          <caret line="59" column="83" lean-forward="true" selection-start-line="59" selection-start-column="83" selection-end-line="59" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

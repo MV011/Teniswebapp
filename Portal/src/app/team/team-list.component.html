@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Grupa</th>
+    <th colspan="4">Elevi</th>
+    <th>Urmatoarea Sedinta</th>
+  </tr>
+  <tr *ngFor="let team of teamsList;let i=index">
+    <td><a>Grupa {{team.id}}</a></td>
+    <td *ngFor="let student of team.students">{{student.firstName}} {{student.lastName}}</td>
+    <td> {{nextDates[i]}}</td>
+  </tr>
+</table>

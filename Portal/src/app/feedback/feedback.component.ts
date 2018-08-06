@@ -8,7 +8,6 @@ import {IFeedback} from './feedback';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'active-component',
   templateUrl: './feedback.component.html',
   styleUrls: []
 })

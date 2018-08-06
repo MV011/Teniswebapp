@@ -1,13 +1,8 @@
-<ul id="home-content">
-  <li>
-    Grupe
-  </li>
-  <li>
-    Feedback
-  </li>
-  <li>
-    Admin
-  </li>
-  <li>
-  </li>
-</ul>
+<header>
+  <ul id="home-content">
+    <li><a routerLink="/teams" (click)="setTtile('Grupe')">Grupe</a></li>
+    <li><a routerLink="/feedback" (click)="setTtile('Feedback')">Feedback</a></li>
+    <li><a href="#" (click)="setTtile('Admin')">Admin</a></li>
+  </ul>
+</header>
+<router-outlet></router-outlet>
