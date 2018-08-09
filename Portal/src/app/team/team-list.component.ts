@@ -15,6 +15,17 @@ export class TeamListComponent implements OnInit {
   teamsList: ITeam[] = [];
   errorMessage: string;
   nextDates: string[] = [];
+  dataReady = false;
+  emptyStudent: IStudent = {
+    id: 0,
+    firstName: 'Unassigned',
+    lastName: '',
+    birthDate : 'null',
+    email : 'null',
+    phoneNumber : 'null',
+    skill : 0,
+    teamId : 0
+};
 
   constructor(private datePipe: DatePipe,
               private feedbackService: FeedbackService,
@@ -24,12 +35,18 @@ export class TeamListComponent implements OnInit {
 
   getNextDates(): void {
 
-    for(const team of this.teamsList) {
+    for (const team of this.teamsList) {
 
       const tempDate = new Date(Date.parse(team.dateTime.firstOccurrence));
+      const today = new Date(Date.now());
+      const nextDate = new Date();
 
-      console.log(tempDate.getDay());
-
+      if (tempDate.getDay() >= today.getDay()) {
+        nextDate.setDate(today.getDate() + (tempDate.getDay() - today.getDay()));
+      } else {
+        nextDate.setDate(today.getDate() + (7 - today.getDay() + tempDate.getDay()));
+      }
+      this.nextDates.push(nextDate.toLocaleDateString('ro-RO'));
     }
   }
 
@@ -49,10 +66,14 @@ export class TeamListComponent implements OnInit {
               },
               error => this.errorMessage = <any>error
             );
-            team.students = studentsList;
           }
+          for (let i = team.students.length; i < 4; i++) {
+            studentsList.push(this.emptyStudent);
+          }
+          team.students = studentsList;
         }
         this.getNextDates();
+        this.dataReady = true;
       },
       error => this.errorMessage = <any>error
     );

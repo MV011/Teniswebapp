@@ -8,14 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85bbef04-6c3d-4320-9927-f9c18091c420" name="Default" comment="Removed XML&#10;Fixed ResponseFilter&#10;Removed extra dependencies&#10;FE">
+      <change afterPath="$PROJECT_DIR$/../../Portal/src/app/student/student-add.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Portal/src/app/student/student-add.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Portal/src/app/student/student-add.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Portal/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Portal/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/feedback/feedback.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Portal/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/student/student.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/student/student.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/team/team-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/team/team-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/team/team-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/team/team-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Portal/src/app/team/team-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/app/team/team-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Portal/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Portal/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/StudentResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dare/teniswebapp/StudentResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/teniswebapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/StudentResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/teniswebapp/WEB-INF/classes/com/dare/teniswebapp/StudentResource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,23 +51,24 @@
     <session id="177452733">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9039" />
+          <entry key="java" value="9041" />
           <entry key="txt" value="782" />
           <entry key="xml" value="150" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9038" />
+          <entry key="JAVA" value="9040" />
           <entry key="PLAIN_TEXT" value="782" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="150" />
@@ -67,13 +77,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="MODULES/mdl-teniswebapp" value="1" />
-          <entry key="java" value="42" />
+          <entry key="java" value="43" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="42" />
+          <entry key="JAVA" value="43" />
           <entry key="UML" value="1" />
           <entry key="XML" value="5" />
         </counts>
@@ -87,11 +97,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+            <state relative-caret-position="345">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,20 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="59" column="83" lean-forward="true" selection-start-line="59" selection-start-column="83" selection-end-line="59" selection-end-column="83" />
+            <state relative-caret-position="333">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+            <state relative-caret-position="491">
+              <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,7 +136,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="225">
               <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
@@ -156,17 +154,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+            <state relative-caret-position="690">
+              <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="285">
+              <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -216,11 +214,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Team.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Coach.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java" />
       </list>
     </option>
   </component>
@@ -247,7 +245,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -258,6 +256,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -338,15 +338,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533504178970" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533504181202" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -556,7 +554,8 @@
       <workItem from="1532535547991" duration="33000" />
       <workItem from="1532535703945" duration="24820000" />
       <workItem from="1532886837057" duration="75000" />
-      <workItem from="1532985346701" duration="33666000" />
+      <workItem from="1532985346701" duration="33922000" />
+      <workItem from="1533670735979" duration="3993000" />
     </task>
     <task id="LOCAL-00001" summary="Asd">
       <created>1532124677923</created>
@@ -674,10 +673,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85550000" />
+    <option name="totallyTimeSpent" value="89799000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -685,10 +684,9 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22389127" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2267525" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Application Servers" order="0" sideWeight="0.49779087" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32871014" />
       <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49779087" weight="0.3263889" />
@@ -704,6 +702,7 @@
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32871014" />
+      <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="right" id="CDI" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Maven Projects" order="2" />
@@ -841,15 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="66" column="53" lean-forward="true" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
-          <folding>
-            <element signature="method#parseResults#0;class#StudentRepository#0" />
-            <element signature="method#create#0;class#StudentRepository#0" />
-            <element signature="method#getStudents#0;class#StudentRepository#0" />
-            <element signature="method#update#0;class#StudentRepository#0" />
-            <element signature="method#delete#0;class#StudentRepository#0" />
-            <element signature="method#getUnassigned#0;class#StudentRepository#0" />
-            <element signature="method#getStudents#1;class#StudentRepository#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,13 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="843" selection-start-line="843" selection-end-line="843" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -895,11 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1312#1313#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -907,12 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2040#2041#0" expanded="true" />
-            <element signature="e#2081#2082#0" expanded="true" />
-            <element signature="e#2117#2118#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,22 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-          <folding>
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1701#1702#0" expanded="true" />
-            <element signature="e#1760#1761#0" expanded="true" />
-            <element signature="e#1812#1813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -956,23 +912,48 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="82.5" y="14.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="83.0" y="15.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+        <state relative-caret-position="690">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        <state relative-caret-position="491">
+          <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -981,35 +962,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/FeedbackRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="59" column="83" lean-forward="true" selection-start-line="59" selection-start-column="83" selection-end-line="59" selection-end-column="83" />
+        <state relative-caret-position="884">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/repository/CoachRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/FeedbackResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+        <state relative-caret-position="333">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/model/Feedback.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/StudentResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dare/teniswebapp/CORSResponseFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

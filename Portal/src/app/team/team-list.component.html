@@ -1,4 +1,5 @@
-<table>
+<div *ngIf="dataReady != true"><h1>Loading...</h1></div>
+<table *ngIf="dataReady">
   <tr>
     <th>Grupa</th>
     <th colspan="4">Elevi</th>
@@ -6,7 +7,7 @@
   </tr>
   <tr *ngFor="let team of teamsList;let i=index">
     <td><a>Grupa {{team.id}}</a></td>
-    <td *ngFor="let student of team.students">{{student.firstName}} {{student.lastName}}</td>
+    <td *ngFor="let student of team.students" [ngClass]="{true:'unassigned'}[student.firstName =='Unassigned']">{{student.firstName}} {{student.lastName}}</td>
     <td> {{nextDates[i]}}</td>
   </tr>
 </table>

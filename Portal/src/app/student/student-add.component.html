@@ -1,0 +1,25 @@
+<mat-card class="form-area">
+  <form #myForm="ngForm">
+  <mat-form-field>
+    <input matInput type="text" pattern="[A-Za-z ]{1,32}" [(ngModel)]="tempStudent.firstName" name="firstName" placeholder="Prenume" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" pattern="[A-Za-z ]{1,32}" [(ngModel)]="tempStudent.lastName" name="lastName" placeholder="Nume" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="email" name="email" [(ngModel)]="tempStudent.email" placeholder="Email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="tel" pattern="[0-9 ]{10}" [(ngModel)]="tempStudent.phoneNumber" name="phoneNumber" placeholder="Telefon" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" max="100" [(ngModel)]="tempStudent.skill" name="skill" placeholder="Skill" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="birthDate" name="birthDate" placeholder="Data nasterii" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  </form>
+  <button type="submit" [ngClass]="{true:'submitted'}[submitted]" [disabled]="!myForm.valid" (click)="submitted ? isSubmitted() : ngOnUpdate()">{{submitted ? 'Success!' : 'Submit'}}</button>
+</mat-card>

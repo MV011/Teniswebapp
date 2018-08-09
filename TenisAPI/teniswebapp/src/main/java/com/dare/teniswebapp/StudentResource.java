@@ -5,6 +5,7 @@ import com.dare.teniswebapp.repository.StudentRepository;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,6 +15,13 @@ public class StudentResource {
     //TODO update responses
 
     private StudentRepository studentRepository = new StudentRepository();
+
+    @OPTIONS
+    public Response options(){
+        Response r = Response.ok()
+                .build();
+        return r;
+    }
 
     //Create a new student - POST http://serveraddress/v1/student
     @POST
