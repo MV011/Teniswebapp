@@ -5,6 +5,7 @@ import com.dare.teniswebapp.repository.CoachRepository;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,13 @@ import java.util.List;
 public class CoachResource {
 
     private CoachRepository coachRepository = new CoachRepository();
+
+    @OPTIONS
+    public Response options(){
+        Response r = Response.ok()
+                .build();
+        return r;
+    }
 
     //Create coach - POST http://serveraddress/v1/coaches
     @POST

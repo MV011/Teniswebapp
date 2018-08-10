@@ -7,13 +7,16 @@ import {RouterModule} from '@angular/router';
 import {StudentAddComponent} from '../student/student-add.component';
 import {StudentModule} from '../student/student.module';
 import {AdminComponent} from './admin.component';
+import {CoachAddComponent} from '../coach/coach-add.component';
+import {CoachModule} from '../coach/coach.module';
 
 @NgModule({
   declarations: [AdminComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, StudentModule, RouterModule.forChild([
-      { path: 'admin/students', component: StudentAddComponent }
+    BrowserModule, HttpClientModule, FormsModule, StudentModule, CoachModule, RouterModule.forChild([
+      { path: 'admin/students', component: StudentAddComponent },
+      { path: 'admin/coaches', component: CoachAddComponent }
     ])
   ],
   exports: [],
