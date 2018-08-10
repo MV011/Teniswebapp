@@ -15,7 +15,7 @@ export class FeedbackAddComponent implements OnInit {
   errorMessage: string;
   rating: number;
   description: string;
-  ratingSelected = false;
+  ratingSelected = 1;
 
   constructor(private datePipe: DatePipe,
               private feedbackService: FeedbackService,
@@ -30,6 +30,12 @@ export class FeedbackAddComponent implements OnInit {
       .subscribe(
         error => this.errorMessage = <any>error
       );
+
+    this.ratingSelected++;
+  }
+
+  closeWindow() {
+    window.close();
   }
 
   ngOnInit() {

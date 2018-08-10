@@ -5,21 +5,24 @@
     <title>Feedback {{studentId}}</title>
 </head>
   <body>
-  <form *ngIf="!ratingSelected" #firstStep="ngForm">
-    <mat-radio-group [(ngModel)]="rating" name="rating">
-      <mat-radio-button [value]="1">Option 1</mat-radio-button>
-      <mat-radio-button [value]="2">Option 2</mat-radio-button>
-      <mat-radio-button [value]="3">Option 3</mat-radio-button>
-      <mat-radio-button [value]="4">Option 4</mat-radio-button>
-      <mat-radio-button [value]="5">Option 5</mat-radio-button>
-    </mat-radio-group>
-    <button [disabled]="!firstStep.valid" (click)="ratingSelected=true">Next</button>
-  </form>
-  <form *ngIf="ratingSelected" #secondStep="ngForm">
-    <mat-form-field>
-      <input matInput [(ngModel)]="description" type="text" name="description" placeholder="Descriere" required>
-    </mat-form-field>
-    <button [disabled]="!secondStep.valid" (click)="submitFeedback()">Submit</button>
-  </form>
+    <mat-card class="form-area">
+      <form *ngIf="ratingSelected===1" #firstStep="ngForm">
+        <mat-radio-group [(ngModel)]="rating" name="rating">
+          <mat-radio-button [value]="1">Option 1</mat-radio-button>
+          <mat-radio-button [value]="2">Option 2</mat-radio-button>
+          <mat-radio-button [value]="3">Option 3</mat-radio-button>
+          <mat-radio-button [value]="4">Option 4</mat-radio-button>
+          <mat-radio-button [value]="5">Option 5</mat-radio-button>
+        </mat-radio-group>
+        <button [disabled]="!firstStep.valid" (click)="ratingSelected=ratingSelected+1">Next</button>
+      </form>
+      <form *ngIf="ratingSelected===2" #secondStep="ngForm">
+        <mat-form-field>
+          <input matInput [(ngModel)]="description" type="text" name="description" placeholder="Descriere" required>
+        </mat-form-field>
+        <button [disabled]="!secondStep.valid" (click)="submitFeedback()">Submit</button>
+      </form>
+      <button *ngIf="ratingSelected===3" (click)="closeWindow()">Close Window</button>
+    </mat-card>
   </body>
 </html>

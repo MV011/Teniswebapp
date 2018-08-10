@@ -8,7 +8,7 @@ import {DatePipe} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {FeedbackAddComponent} from './feedback-add.component';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -17,7 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, MatRadioModule, MatFormFieldModule,
-    MatInputModule, BrowserAnimationsModule, MatCardModule,
+    MatInputModule, BrowserAnimationsModule, MatCardModule, MatSelectModule,
     RouterModule.forChild(
       [{path: 'feedback/add/:studentId/:coachId', component: FeedbackAddComponent}
       ]

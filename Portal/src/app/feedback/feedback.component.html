@@ -1,18 +1,23 @@
 <div>
-  <div>
-    <label title="Grupa">
-      <select [(ngModel)]="teamId" (change)="getStudentNames()">
-        <option selected="selected" value="default" style="display:none"></option>
-        <option *ngFor="let team of teamsList; let i=index" [value]="i">Grupa {{team.id}}</option>
-      </select>
-    </label>
+  <mat-card class="form-area">
+    <mat-form-field>
+      <mat-select placeholder="Grupa" [(ngModel)]="teamId" name="teams" (selectionChange)="getStudentNames()">
+        <mat-option *ngFor="let team of teamsList; let i=index" [value]="i"> Grupa {{team.id}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <br />
-    <form title="Elevi" (change)="studentSelected=true">
-      <input type="radio" name="students" checked="checked" style="visibility: hidden">
-      <div *ngFor="let student of studentsList">
-        <input type="radio" name= "students" [(ngModel)]="studentId" [value]="student.id">{{student.firstName}} {{student.lastName}}
-      </div>
-    </form>
+    <mat-radio-group [(ngModel)]="studentId" (change)="studentSelected=true">
+      <mat-radio-button *ngFor="let student of studentsList" [value]="student.id">
+        {{student.firstName}} {{student.lastName}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <!--<form title="Elevi" (change)="studentSelected=true">-->
+      <!--<input type="radio" name="students" checked="checked" style="visibility: hidden">-->
+      <!--<div *ngFor="let student of studentsList">-->
+        <!--<input type="radio" name= "students" [(ngModel)]="studentId" [value]="student.id">{{student.firstName}} {{student.lastName}}-->
+      <!--</div>-->
+    <!--</form>-->
     <br />
     <!--FOR UPDATE: HOW WILL THE SESSIONS BE STORED?-->
     <!--<select name="session">-->
@@ -22,5 +27,5 @@
     <!--</select>-->
     <br />
     <button type="button" *ngIf="studentSelected" (click)="tempCreateFeedback()"><a target="_blank" [routerLink]="['/feedback/add/', studentId, coachId]">Start</a></button>
-  </div>
+  </mat-card>
 </div>

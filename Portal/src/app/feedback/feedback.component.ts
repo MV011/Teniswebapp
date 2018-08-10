@@ -32,6 +32,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   getStudentNames(): void {
+    console.log(this.teamId);
     this.studentsList = [];
     this.coachId = this.teamsList[this.teamId].coachId;
     for (const student of this.teamsList[this.teamId].students) {
