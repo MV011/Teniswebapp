@@ -21,9 +21,6 @@
       <!--<option value="session3">Session 3</option>-->
     <!--</select>-->
     <br />
-    <button type="button" *ngIf="studentSelected" (click)="tempCreateFeedback()">Start</button>
-
-    Add rating select page
-    Add description enter page + submit
+    <button type="button" *ngIf="studentSelected" (click)="tempCreateFeedback()"><a target="_blank" [routerLink]="['/feedback/add/', studentId, coachId]">Start</a></button>
   </div>
 </div>

@@ -19,6 +19,7 @@ export class FeedbackComponent implements OnInit {
   tempStudent: IStudent;
   teamId: number;
   studentId: number;
+  coachId: number;
   studentSelected = false;
 
   constructor(private datePipe: DatePipe,
@@ -28,24 +29,11 @@ export class FeedbackComponent implements OnInit {
   }
 
   tempCreateFeedback(): void {
-    const tempDate = new Date(Date.now());
-    const tempFeedback: IFeedback = {
-      id: 0,
-      dateTime: this.datePipe.transform(tempDate.toLocaleDateString(), 'yyy-MM-dd'),
-      studentID: this.studentId,
-      coachID: this.teamsList[this.teamId].coachId,
-      rating: 3,
-      description: 'Test description'
-    };
-    this.feedbackService.createFeedback(this.teamsList[this.teamId].coachId,
-                                    this.studentId, JSON.parse(JSON.stringify(tempFeedback)))
-      .subscribe(
-      error => this.errorMessage = <any>error
-    );
   }
 
   getStudentNames(): void {
     this.studentsList = [];
+    this.coachId = this.teamsList[this.teamId].coachId;
     for (const student of this.teamsList[this.teamId].students) {
       this.studentService.getInfo(student.id).subscribe(
         tempStudent => {
@@ -55,9 +43,7 @@ export class FeedbackComponent implements OnInit {
         error => this.errorMessage = <any>error
       );
     }
-
   }
-
 
   ngOnInit(): void {
     this.teamsList = [];
