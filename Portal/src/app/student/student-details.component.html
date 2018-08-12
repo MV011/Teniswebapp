@@ -1,0 +1,29 @@
+<mat-spinner *ngIf="dataReady != true"></mat-spinner>
+<mat-card class="form-area" *ngIf="dataReady">
+  <form #myForm="ngForm">
+    <mat-form-field>
+      <input matInput type="text" pattern="[A-Za-z ]{1,32}" [(ngModel)]="selectedStudent.firstName" name="firstName" placeholder="Prenume" value="{{selectedStudent.firstName}}" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" pattern="[A-Za-z ]{1,32}" [(ngModel)]="selectedStudent.lastName" name="lastName" placeholder="Nume" value="{{selectedStudent.lastName}}" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" name="email" [(ngModel)]="selectedStudent.email" placeholder="Email" value="{{selectedStudent.email}}" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="tel" pattern="[0-9 ]{10}" [(ngModel)]="selectedStudent.phoneNumber" name="phoneNumber" placeholder="Telefon" value="{{selectedStudent.phoneNumber}}" disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" max="100" [(ngModel)]="selectedStudent.skill" name="skill" placeholder="Skill" value="{{selectedStudent.skill}}" disabled>
+    </mat-form-field>
+    <mat-form-field *ngIf="update[5] === false">
+      <input matInput type="text" name="birthDate" placeholder="Data nasterii" value="{{selectedStudent.birthDate}}" disabled>
+    </mat-form-field>
+    <mat-form-field *ngIf="update[5] === true">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="selectedStudent" name="birthDateUpdate" placeholder="{{selectedStudent.birthDate}}" disabled>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+  <button *ngIf="updateSet.has(true)" type="submit">Submit</button>
+</mat-card>

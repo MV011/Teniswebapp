@@ -1,0 +1,14 @@
+.mat-elevation-z8 {
+  max-width: 325px;
+  margin: auto;
+  background: aliceblue;
+}
+
+mat-form-field {
+  font-size: 14px;
+  margin: auto;
+}
+
+td, th {
+  width: 25%;
+}

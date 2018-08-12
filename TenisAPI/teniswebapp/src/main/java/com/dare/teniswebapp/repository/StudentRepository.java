@@ -46,7 +46,7 @@ public class StudentRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            results = statement.executeQuery("SELECT StudentID, StudentFirstName, StudentLastName FROM Student;");
+            results = statement.executeQuery("SELECT * FROM Student;");
 
             parseResults(students, results);
 

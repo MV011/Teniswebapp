@@ -18,6 +18,10 @@ export class StudentService {
     return this.http.get<IStudent>( this.baseUrl + `/${studentId}`);
   }
 
+  getList() {
+    return this.http.get<IStudent[]>(this.baseUrl);
+  }
+
   create(reqBody: JSON): Observable<JSON> {
     return this.http.post<JSON>(this.baseUrl, reqBody).pipe(catchError(ErrorHandler.handleError));
   }

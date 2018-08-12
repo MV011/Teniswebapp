@@ -9,13 +9,14 @@ import {StudentModule} from '../student/student.module';
 import {AdminComponent} from './admin.component';
 import {CoachAddComponent} from '../coach/coach-add.component';
 import {CoachModule} from '../coach/coach.module';
+import {StudentListComponent} from '../student/student-list.component';
 
 @NgModule({
   declarations: [AdminComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, StudentModule, CoachModule, RouterModule.forChild([
-      { path: 'admin/students', component: StudentAddComponent },
+      { path: 'admin/students', component: StudentListComponent },
       { path: 'admin/coaches', component: CoachAddComponent }
     ])
   ],

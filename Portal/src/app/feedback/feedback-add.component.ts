@@ -34,7 +34,7 @@ export class FeedbackAddComponent implements OnInit {
     this.ratingSelected++;
   }
 
-  closeWindow() {
+   closeWindow() {
     window.close();
   }
 
@@ -45,7 +45,7 @@ export class FeedbackAddComponent implements OnInit {
       studentID: this.activatedRoute.snapshot.params['studentId'],
       coachID: this.activatedRoute.snapshot.params['coachId'],
       rating: 0,
-      description: ''
+      description: null
     };
   }
 }
