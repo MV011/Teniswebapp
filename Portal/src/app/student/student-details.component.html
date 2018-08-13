@@ -20,14 +20,17 @@
       <input matInput type="text" name="birthDateDisplay" placeholder="Data nasterii" value="{{selectedStudent.birthDate}}" [disabled]="!update">
     </mat-form-field>
     <mat-form-field *ngIf="update">
-      <input matInput [matDatepicker]="picker" [(ngModel)]="selectedStudent.birthDate" name="birthDate" placeholder="{{selectedStudent.birthDate}}" [disabled]="!update">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="selectedStudent.birthDate" name="birthDate" placeholder="Data nasterii" value="{{selectedStudent.birthDate}}" [disabled]="!update">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </form>
-  <button *ngIf="!update" (click)="update=true">Edit</button>
+  <div *ngIf="!update" class="box">
+    <button (click)="navigateBack()">Back</button>
+    <button (click)="update=true">Edit</button>
+  </div>
   <div *ngIf="update" class="box">
     <button (click)="update=false; submitUpdates();" type="submit">Submit</button>
-    <button (click)="update=false; ngOnInit(); " type="submit">Cancel</button>
+    <button (click)="update=false; ngOnInit(); " class="cancel">Cancel</button>
   </div>
 </mat-card>

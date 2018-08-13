@@ -7,9 +7,9 @@ import {RouterModule} from '@angular/router';
 import {StudentAddComponent} from '../student/student-add.component';
 import {StudentModule} from '../student/student.module';
 import {AdminComponent} from './admin.component';
-import {CoachAddComponent} from '../coach/coach-add.component';
 import {CoachModule} from '../coach/coach.module';
 import {StudentListComponent} from '../student/student-list.component';
+import {CoachListComponent} from '../coach/coach-list.component';
 
 @NgModule({
   declarations: [AdminComponent
@@ -17,7 +17,7 @@ import {StudentListComponent} from '../student/student-list.component';
   imports: [
     BrowserModule, HttpClientModule, FormsModule, StudentModule, CoachModule, RouterModule.forChild([
       { path: 'admin/students', component: StudentListComponent },
-      { path: 'admin/coaches', component: CoachAddComponent }
+      { path: 'admin/coaches', component: CoachListComponent }
     ])
   ],
   exports: [],

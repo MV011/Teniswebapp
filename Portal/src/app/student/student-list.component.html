@@ -1,8 +1,11 @@
 
 <div class="mat-elevation-z8">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
+    <div class="box">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      <button class="small-button" routerLink="/admin/students/add">Add</button>
+  </div>
 
   <table mat-table [dataSource]="dataSource" matSort>
 

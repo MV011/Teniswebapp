@@ -4,5 +4,5 @@ export interface ICoach {
   lastName: string;
   phoneNumber: string;
   startDate: string;
-  averageRating: number;
+  feedbackRating: number;
 }

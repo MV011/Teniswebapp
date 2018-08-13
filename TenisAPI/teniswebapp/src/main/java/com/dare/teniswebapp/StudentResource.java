@@ -17,7 +17,15 @@ public class StudentResource {
     private StudentRepository studentRepository = new StudentRepository();
 
     @OPTIONS
-    public Response options(){
+    public Response optionsRoot(){
+        Response r = Response.ok()
+                .build();
+        return r;
+    }
+
+    @OPTIONS
+    @Path("{studentId}")
+    public Response optionsId(){
         Response r = Response.ok()
                 .build();
         return r;

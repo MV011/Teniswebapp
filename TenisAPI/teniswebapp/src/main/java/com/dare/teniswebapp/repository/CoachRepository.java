@@ -13,12 +13,20 @@ import java.util.List;
 public class CoachRepository {
 
     //Iterates through a results set
-    private void parseResults(List<Coach> students, ResultSet results) throws SQLException {
+    private void parseResults(List<Coach> students, ResultSet results) throws Throwable {
         while(results.next()) {
             Coach tmp = new Coach();
             tmp.setId(results.getInt("CoachID"));
             tmp.setFirstName(results.getString("CoachFirstName"));
             tmp.setLastName(results.getString("CoachLastName"));
+
+            try(Connection connection = DBConn.start()) {
+                Statement statement = connection.createStatement();
+                ResultSet result = statement.executeQuery("SELECT ROUND(avg(FeedbackRating),2) AS Rating FROM tenisdb.Feedback WHERE CoachID =" + results.getInt("CoachID") + ";");
+                result.first();
+                tmp.setFeedbackRating(result.getFloat("Rating"));
+            }
+
             students.add(tmp);
         }
     }

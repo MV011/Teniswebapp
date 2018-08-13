@@ -14,7 +14,7 @@
           <mat-radio-button [value]="4">Option 4</mat-radio-button>
           <mat-radio-button [value]="5">Option 5</mat-radio-button>
         </mat-radio-group>
-        <button [disabled]="!firstStep.valid" (click)="ratingSelected=ratingSelected+1">Next</button>
+        <button [disabled]="rating===0" (click)="ratingSelected=ratingSelected+1">Next</button>
       </form>
       <form *ngIf="ratingSelected===2" #secondStep="ngForm">
         <mat-form-field>

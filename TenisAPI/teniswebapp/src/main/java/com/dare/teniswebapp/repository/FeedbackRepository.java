@@ -19,6 +19,8 @@ public class FeedbackRepository {
             tmp.setId(results.getInt("FeedbackID"));
             tmp.setDateTime(results.getString("FeedbackDate"));
             tmp.setRating(results.getByte("FeedbackRating"));
+            tmp.setDescription(results.getString("FeedbackDescription"));
+            tmp.setStudentID(results.getInt("StudentId"));
             students.add(tmp);
         }
     }
@@ -44,7 +46,7 @@ public class FeedbackRepository {
 
         try(Connection connection = DBConn.start()) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT FeedbackID, FeedbackDate, FeedbackRating FROM Feedback WHERE CoachID = "+coachId+";");
+            ResultSet resultSet = statement.executeQuery("SELECT FeedbackID, FeedbackDate, FeedbackRating, FeedbackDescription, StudentID FROM Feedback WHERE CoachID = "+coachId+";");
             parseSummaryResults(results,resultSet);
 
         } catch (SQLException e) {

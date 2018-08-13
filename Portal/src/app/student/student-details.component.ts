@@ -9,7 +9,7 @@ import {NgForm} from '@angular/forms';
 
 @Component({
   templateUrl: './student-details.component.html',
-  styleUrls: ['./student-add.component.css']
+  styleUrls: ['./student.component.css']
 })
 export class StudentDetailsComponent implements OnInit {
   selectedStudent: IStudent = {
@@ -36,6 +36,9 @@ export class StudentDetailsComponent implements OnInit {
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/baseline-create-24px.svg'));
   }
 
+  navigateBack() {
+    window.history.back();
+  }
   submitUpdates() {
     this.studentService.updateStudent(this.selectedStudent.id, JSON.parse(JSON.stringify(this.selectedStudent))).subscribe(
       error => this.errorMessage = <any>error

@@ -14,7 +14,7 @@ export class CoachAddComponent implements OnInit {
     lastName: '',
     phoneNumber: '',
     startDate: '',
-    averageRating: 0
+    feedbackRating: 0
   };
   submitted = false;
   startDate = new Date();

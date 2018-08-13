@@ -13,7 +13,7 @@ export class FeedbackAddComponent implements OnInit {
   tempDate = new Date(Date.now());
   tempFeedback: IFeedback = null;
   errorMessage: string;
-  rating: number;
+  rating = 0;
   description: string;
   ratingSelected = 1;
 

@@ -18,6 +18,14 @@ export class CoachService {
     return this.http.get<ICoach>( this.baseUrl + `/${coachId}`);
   }
 
+  getList() {
+    return this.http.get<ICoach[]>(this.baseUrl);
+  }
+
+  update(coachId: number, reqBody: JSON): Observable<JSON> {
+    return this.http.put<JSON>(this.baseUrl + `/${coachId}`, reqBody).pipe(catchError(ErrorHandler.handleError));
+  }
+
   create(reqBody: JSON): Observable<JSON> {
     return this.http.post<JSON>(this.baseUrl, reqBody).pipe(catchError(ErrorHandler.handleError));
   }

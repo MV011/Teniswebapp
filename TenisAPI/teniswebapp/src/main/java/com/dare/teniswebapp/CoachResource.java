@@ -15,7 +15,15 @@ public class CoachResource {
     private CoachRepository coachRepository = new CoachRepository();
 
     @OPTIONS
-    public Response options(){
+    public Response optionsRoot(){
+        Response r = Response.ok()
+                .build();
+        return r;
+    }
+
+    @OPTIONS
+    @Path("{coachId}")
+    public Response optionsId(){
         Response r = Response.ok()
                 .build();
         return r;

@@ -1,0 +1,45 @@
+<mat-spinner *ngIf="dataReady != true"></mat-spinner>
+<mat-card class="form-area" *ngIf="dataReady">
+  <form #myForm="ngForm">
+    <mat-form-field>
+      <input matInput type="text" pattern="[A-Za-z ]{1,32}" [(ngModel)]="selectedCoach.firstName" name="firstName" placeholder="Prenume" value="{{selectedCoach.firstName}}" [disabled]="!update">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" pattern="[A-Za-z ]{1,32}" [(ngModel)]="selectedCoach.lastName" name="lastName" placeholder="Nume" value="{{selectedCoach.lastName}}" [disabled]="!update">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="tel" pattern="[0-9 ]{10}" [(ngModel)]="selectedCoach.phoneNumber" name="phoneNumber" placeholder="Telefon" value="{{selectedCoach.phoneNumber}}" [disabled]="!update">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" max="100" [(ngModel)]="selectedCoach.feedbackRating" name="feedbackRating" placeholder="Rating" value="{{selectedCoach.feedbackRating}}" disabled>
+    </mat-form-field>
+    <mat-form-field *ngIf="!update">
+      <input matInput type="text" name="startDate" placeholder="Data angajarii" value="{{selectedCoach.startDate}}" disabled>
+    </mat-form-field>
+  </form>
+
+  <mat-accordion *ngIf="!update">
+    <mat-expansion-panel *ngFor="let feedback of feedbackList" (opened)="getStudentDetails(feedback.studentID)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{feedback.rating}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{feedback.dateTime}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+     <a [routerLink]="['/admin/students/', feedback.studentID]"><h3>{{studentFirstName}} {{studentLastName}}</h3></a>
+      <p>{{feedback.description}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <div *ngIf="!update" class="box">
+    <button (click)="navigateBack()">Back</button>
+    <button (click)="update=true">Edit</button>
+  </div>
+  <div *ngIf="update" class="box">
+    <button (click)="update=false; submitUpdates();" type="submit">Submit</button>
+    <button (click)="update=false; ngOnInit(); " class="cancel">Cancel</button>
+  </div>
+</mat-card>

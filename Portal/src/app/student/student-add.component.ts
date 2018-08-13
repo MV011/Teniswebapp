@@ -5,7 +5,7 @@ import {DatePipe} from '@angular/common';
 
 @Component({
   templateUrl: './student-add.component.html',
-  styleUrls: ['./student-add.component.css']
+  styleUrls: ['./student.component.css']
 })
 export class StudentAddComponent implements OnInit {
   tempStudent: IStudent = {
@@ -27,7 +27,7 @@ export class StudentAddComponent implements OnInit {
   }
 
   isSubmitted() {
-    console.log('Submitted');
+    window.history.back();
   }
   ngOnUpdate() {
     this.submitted = true;
@@ -36,6 +36,5 @@ export class StudentAddComponent implements OnInit {
     this.studentService.create(JSON.parse(JSON.stringify(this.tempStudent))).subscribe(
       error => this.errorMessage = <any>error
     );
-    console.log(this.birthDate.toLocaleDateString('ro-RO'));
   }
 }
