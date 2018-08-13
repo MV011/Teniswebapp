@@ -45,3 +45,12 @@ button:disabled:active {
 .submitted {
   background: green;
 }
+
+mat-icon {
+  display: block;
+  align-items: right;
+}
+
+.box {
+  display: flex;
+}

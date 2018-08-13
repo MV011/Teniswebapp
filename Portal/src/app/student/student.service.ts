@@ -15,11 +15,15 @@ export class StudentService {
   constructor(private http: HttpClient) {}
   getInfo(studentId: number) {
 
-    return this.http.get<IStudent>( this.baseUrl + `/${studentId}`);
+    return this.http.get<IStudent>( this.baseUrl + `/${studentId}`).pipe(catchError(ErrorHandler.handleError));
   }
 
   getList() {
-    return this.http.get<IStudent[]>(this.baseUrl);
+    return this.http.get<IStudent[]>(this.baseUrl).pipe(catchError(ErrorHandler.handleError));
+  }
+
+  updateStudent(studentId: number, reqBody: JSON): Observable<JSON> {
+    return this.http.put<JSON>(this.baseUrl + `/${studentId}`, reqBody).pipe(catchError(ErrorHandler.handleError));
   }
 
   create(reqBody: JSON): Observable<JSON> {

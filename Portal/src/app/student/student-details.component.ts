@@ -3,6 +3,9 @@ import {IStudent} from './student';
 import {StudentService} from './student.service';
 import {DatePipe} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
+import {MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
+import {NgForm} from '@angular/forms';
 
 @Component({
   templateUrl: './student-details.component.html',
@@ -21,12 +24,22 @@ export class StudentDetailsComponent implements OnInit {
   };
   dataReady = false;
   errorMessage: string;
-  update: boolean[] = [false, false, false, false, false, false];
-  updateSet = new Set(this.update);
+  update: false;
 
   constructor(private datePipe: DatePipe,
               private studentService: StudentService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              iconRegistry: MatIconRegistry,
+              sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'edit',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/baseline-create-24px.svg'));
+  }
+
+  submitUpdates() {
+    this.studentService.updateStudent(this.selectedStudent.id, JSON.parse(JSON.stringify(this.selectedStudent))).subscribe(
+      error => this.errorMessage = <any>error
+    );
   }
 
   ngOnInit() {
