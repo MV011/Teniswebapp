@@ -19,8 +19,10 @@ export class StudentDetailsComponent implements OnInit {
     email: '',
     phoneNumber: '',
     birthDate: '',
+    joinDate: '',
     skill: 0,
-    teamId: 0
+    teamId: 0,
+    availability: null
   };
   dataReady = false;
   errorMessage: string;

@@ -15,6 +15,21 @@
   <mat-form-field>
     <input matInput type="number" max="100" [(ngModel)]="tempStudent.skill" name="skill" placeholder="Skill" required>
   </mat-form-field>
+    <div class="box">
+      <mat-form-field style="max-width:35%">
+        <mat-select name="day"placeholder="Zi" [(ngModel)]="tempStudent.availability.day">
+          <mat-option  *ngFor="let day of days" [value]="days.indexOf(day)+1">
+            {{day}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field style="max-width:45%">
+        <div class="box">
+          <input matInput type="number" min="0" max="23" [(ngModel)]="tempHour" name="hour" value="0" required>
+          <input matInput type="number" min="0" max="59" [(ngModel)]="tempMinutes" name="minutes" value="0" required>
+        </div>
+      </mat-form-field>
+    </div>
   <mat-form-field>
     <input matInput [matDatepicker]="picker" [(ngModel)]="birthDate" name="birthDate" placeholder="Data nasterii" required>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

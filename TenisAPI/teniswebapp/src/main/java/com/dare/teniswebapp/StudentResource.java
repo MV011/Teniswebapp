@@ -102,7 +102,6 @@ public class StudentResource {
     //Delete specific student - DELETE http://serveraddress/v1/students/{studentId}
     @DELETE
     @Path("{studentId}")
-    @Produces(MediaType.APPLICATION_JSON)
     public void deleteStudent(@PathParam("studentId") int studentId) {
 
         try {

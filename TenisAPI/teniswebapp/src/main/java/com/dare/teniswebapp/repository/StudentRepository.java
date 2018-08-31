@@ -3,6 +3,9 @@ package com.dare.teniswebapp.repository;
 import com.dare.teniswebapp.dbdriver.DBConn;
 import com.dare.teniswebapp.model.Student;
 
+import javax.json.Json;
+import javax.json.JsonReader;
+import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,8 +35,10 @@ public class StudentRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO `Student` (`StudentFirstName`, `StudentLastName`, `StudentBirthDate`, `StudentEmail`, `StudentPhoneNumber`, `StudentSkill`) " +
-                    " VALUES ('" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getBirthDate() + "', '" + student.getEmail() + "', '" + student.getPhoneNumber() + "', '" + student.getSkill() + "');");
+            statement.executeUpdate("INSERT INTO `Student` (`StudentFirstName`, `StudentLastName`, `StudentBirthDate`, StudentJoinDate, `StudentEmail`, `StudentPhoneNumber`, `StudentSkill`, StudentAvailability) " +
+                    " VALUES ('" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getBirthDate()
+                    + "', '" + student.getJoinDate() +"', '" + student.getEmail() + "', '" + student.getPhoneNumber()
+                    + "', '" + student.getSkill() + "', '" + student.getAvailability() +"');");
         }
     }
 
@@ -46,7 +51,7 @@ public class StudentRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            results = statement.executeQuery("SELECT * FROM Student;");
+            results = statement.executeQuery("SELECT * FROM Student WHERE StudentActive=1;");
 
             parseResults(students, results);
 
@@ -72,10 +77,14 @@ public class StudentRepository {
             student.setFirstName(results.getString("StudentFirstName"));
             student.setLastName(results.getString("StudentLastName"));
             student.setBirthDate(String.valueOf(results.getDate("StudentBirthDate")));
+            student.setJoinDate(String.valueOf(results.getDate("StudentJoinDate")));
             student.setEmail(results.getString("StudentEmail"));
             student.setPhoneNumber(results.getString("StudentPhoneNumber"));
             student.setSkill((short) results.getInt("StudentSkill"));
             student.setTeamId(results.getInt("TeamID"));
+            JsonReader reader = Json.createReader(new StringReader(results.getString("StudentAvailability")));
+            student.setAvailability(reader.readObject());
+            reader.close();
 
         }
 
@@ -124,6 +133,11 @@ public class StudentRepository {
                 statement.executeUpdate("UPDATE Student SET TeamID = '"+revision.getTeamId()+"' WHERE StudentID = "+studentId+";");
                 statement.close();
             }
+            if(revision.getAvailability() != null) {
+                statement = connection.createStatement();
+                statement.executeUpdate("UPDATE Student SET TeamID = '" +revision.getAvailability().toString() +"' WHERE StudentID = "+studentId+";");
+                statement.close();
+            }
         }
 
         return revision;
@@ -137,7 +151,7 @@ public class StudentRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM Student WHERE StudentID = "+studentId+";");
+            statement.executeUpdate("UPDATE Student SET StudentActive = 0 WHERE StudentID = "+studentId+";");
         }
     }
 
@@ -150,7 +164,7 @@ public class StudentRepository {
 
         try(Connection connection = DBConn.start()) {
             statement = connection.createStatement();
-            results = statement.executeQuery("SELECT StudentID, StudentFirstName, StudentLastName FROM Student WHERE TeamID = 0");
+            results = statement.executeQuery("SELECT * FROM Student WHERE TeamID = 0 AND StudentActive = 1");
 
             parseResults(students, results);
 

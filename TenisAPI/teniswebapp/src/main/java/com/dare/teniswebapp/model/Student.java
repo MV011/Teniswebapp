@@ -1,5 +1,6 @@
 package com.dare.teniswebapp.model;
 
+import javax.json.JsonObject;
 import javax.json.bind.annotation.JsonbPropertyOrder;
 
 @JsonbPropertyOrder({
@@ -7,6 +8,7 @@ import javax.json.bind.annotation.JsonbPropertyOrder;
         "firstName",
         "lastName",
         "birthDate",
+        "joinDate",
         "email",
         "phoneNumber",
         "skill",
@@ -19,10 +21,12 @@ public class Student {
     private String firstName;
     private String lastName;
     private String birthDate;
+    private String joinDate;
     private String email;
     private String phoneNumber;
     private short skill;
     private int teamId;
+    private JsonObject availability;
 
     public int getId() {
         return id;
@@ -48,6 +52,12 @@ public class Student {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+    public String getJoinDate() {
+        return joinDate;
+    }
+    public void setJoinDate(String joinDate) {
+        this.joinDate = joinDate;
+    }
     public String getEmail() {
         return email;
     }
@@ -66,12 +76,16 @@ public class Student {
     public void setSkill(short skill) {
         this.skill = skill;
     }
-
     public int getTeamId() {
         return teamId;
     }
-
     public void setTeamId(int teamId) {
         this.teamId = teamId;
+    }
+    public JsonObject getAvailability() {
+        return availability;
+    }
+    public void setAvailability(JsonObject availability) {
+        this.availability = availability;
     }
 }

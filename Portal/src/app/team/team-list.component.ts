@@ -21,10 +21,12 @@ export class TeamListComponent implements OnInit {
     firstName: 'Unassigned',
     lastName: '',
     birthDate : 'null',
+    joinDate: 'null',
     email : 'null',
     phoneNumber : 'null',
     skill : 0,
-    teamId : 0
+    teamId : 0,
+    availability: null
 };
 
   constructor(private datePipe: DatePipe,
