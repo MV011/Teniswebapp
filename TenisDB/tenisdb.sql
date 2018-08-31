@@ -27,13 +27,16 @@ CREATE TABLE `Feedback` (
 
 CREATE TABLE `Student` (
   `StudentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `StudentActive` TINYINT NOT NULL DEFAULT 1,
   `StudentFirstName` varchar(45) NOT NULL,
   `StudentLastName` varchar(45) NOT NULL,
   `StudentBirthDate` date NOT NULL,
+  `StudentJoinDate` date NOT NULL,
   `StudentEmail` varchar(45) DEFAULT NULL,
   `StudentPhoneNumber` varchar(45) DEFAULT NULL,
   `StudentSkill` int(11) NOT NULL,
   `TeamID` int(11) NOT NULL DEFAULT '0',
+  'StudentAvailability' json NOT NULL,
   PRIMARY KEY (`StudentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
